@@ -1,0 +1,9 @@
+docs/_build
+docs/_static
+.cache
+.vscode
+__pycache__
+endogen/__pycache__
+tests/__pycache__
+test/.pytest_cache
+outputs
