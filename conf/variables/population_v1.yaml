@@ -1,0 +1,31 @@
+_target_: endogen.config.InputModel
+stage: writing
+output_var: population
+input_vars: [gdppc_l1, intensity_level_hlm8_l1, v2x_libdem_rm8_l1, psecprop_l1, population_l1]
+model: 
+  _target_ : mlforecast.MLForecast
+  models:
+    - _target_: sklearn.linear_model.LinearRegression
+    - _target_: sklearn.ensemble.RandomForestRegressor
+  freq: 1
+  num_threads: 4
+lags:
+  - _target_: endogen.config.Lags
+    num_lag: 1
+    input_vars: [gdppc, intensity_level_hlm8, v2x_libdem_rm8, psecprop, population]
+rolling:
+  - _target_: endogen.config.Rolling
+    window: 8
+    funs: [mean]
+    input_vars: [v2x_libdem]
+  - _target_: endogen.config.Rolling
+    window: 8
+    window_type: halflife
+    funs: [mean]
+    input_vars: [intensity_level]
+transforms:
+  - _target_: endogen.config.Transform
+    output_var: gdppc
+    input_vars: [gdppc_l1, grwth]
+    formula: np.add(gdppc_l1, gdppc_l1*grwth)
+    after_forecast: True 

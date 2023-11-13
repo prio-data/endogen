@@ -1,0 +1,11 @@
+defaults:
+   - global_config: simple_run
+   - variables@_variable_dict.growth: growth_v1
+   - variables@_variable_dict.intensity_level: intensity_level_v1
+   - variables@_variable_dict.v2x_libdem: v2x_libdem_v1
+   - variables@_variable_dict.psecprop: psecprop_v1
+   - variables@_variable_dict.population: population_v1
+   - _self_
+   
+_target_: endogen.config.Config   
+variables: ${oc.dict.values:_variable_dict}

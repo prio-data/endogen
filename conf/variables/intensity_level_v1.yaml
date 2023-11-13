@@ -1,0 +1,40 @@
+_target_: endogen.config.InputModel
+stage: writing
+output_var: intensity_level
+input_vars: [intensity_level_l1, gdppc_l1, grwth_rm4_l1, intensity_level_hlm8_l1, v2x_libdem_l1, psecprop_l1, population_l1, rgdp_rank_l1]
+model: 
+  _target_ : mlforecast.MLForecast
+  models:
+    - _target_: sklearn.ensemble.RandomForestClassifier
+    - _target_: sklearn.linear_model.SGDClassifier
+  freq: 1
+  num_threads: 4
+lags:
+  - _target_: endogen.config.Lags
+    num_lag: 1
+    input_vars: [gdppc, grwth_rm4, intensity_level_hlm8, intensity_level, v2x_libdem, psecprop, population, rgdp_rank]
+rolling:
+  - _target_: endogen.config.Rolling
+    window: 4
+    funs: [mean]
+    input_vars: [grwth]
+  - _target_: endogen.config.Rolling
+    window: 8
+    window_type: halflife
+    funs: [mean]
+    input_vars: [intensity_level]
+transforms:
+  - _target_: endogen.config.Transform
+    output_var: gdppc
+    input_vars: [gdppc_l1, grwth]
+    formula: np.add(gdppc_l1, gdppc_l1*grwth)
+    after_forecast: True
+  - _target_: endogen.config.Transform
+    output_var: rgdp
+    input_vars: [gdppc, population]
+    formula: gdppc:population
+    after_forecast: True
+  - _target_: endogen.config.Transform
+    output_var: rgdp_rank
+    input_vars: [rgdp]
+    formula: scipy.stats.rankdata(rgdp)

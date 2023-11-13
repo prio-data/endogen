@@ -1,0 +1,606 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>polimpact.variables - POLIMPACT 0.01 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: #00718f;
+  --color-brand-content: #00718f;
+  --color-background-secondary: #fafafa;
+  --color-problematic: #c41230;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #00718f;
+  --color-brand-content: #00718f;
+  --color-problematic: #e87722;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #00718f;
+  --color-brand-content: #00718f;
+  --color-problematic: #e87722;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">POLIMPACT 0.01 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  
+  <span class="sidebar-brand-text">POLIMPACT 0.01 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <h1>Source code for polimpact.variables</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Literal</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Mapping</span>
+<span class="kn">import</span> <span class="nn">xarray</span>
+<span class="kn">from</span> <span class="nn">xarray.core.rolling</span> <span class="kn">import</span> <span class="n">DataArrayRolling</span>
+<span class="kn">from</span> <span class="nn">xarray.core.rolling_exp</span> <span class="kn">import</span> <span class="n">RollingExp</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">formulae</span> <span class="kn">import</span> <span class="n">design_matrices</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  <span class="c1"># to be used in design_matrices</span>
+<span class="kn">import</span> <span class="nn">scipy</span>  <span class="c1"># to be used in design_matrices</span>
+
+
+<div class="viewcode-block" id="Variable">
+<a class="viewcode-back" href="../../api.html#polimpact.variables.Variable">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">eq</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Variable</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A variable class that holds the information necessary to represent a variable model or transformation in the simulation system.</span>
+<span class="sd">    Not used for statistical models (see `config.InputModel`).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    output_var : str</span>
+<span class="sd">        Name of the output variable</span>
+<span class="sd">    subset : int</span>
+<span class="sd">        Endogenous simulation requires that all variables are fully specified in a circular fashion.</span>
+<span class="sd">        At the same time, there cannot be any circular definitions in the transformation step, nor in the forecast step.</span>
+<span class="sd">        If the variable is subset == 0, it is estimated/calculated in the transformation step, if it is 1, it is in the forecast step.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    NotImplementedError</span>
+<span class="sd">        This is just the base class that other Variable classes inherits. This class is not meant to be instantiated.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">output_var</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">subset</span><span class="p">:</span> <span class="nb">int</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">node</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;A node representation that interface well with NetworkX graphs.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Tuple[str, Mapping[str, Any]]</span>
+<span class="sd">            A tuple where the first element is the output variable name (&quot;node&quot;), and the second element is a dictionary of node data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">output_var</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;subset&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">subset</span><span class="p">})</span>
+
+<div class="viewcode-block" id="Variable.calc">
+<a class="viewcode-back" href="../../api.html#polimpact.variables.Variable.calc">[docs]</a>
+    <span class="k">def</span> <span class="nf">calc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xd</span><span class="p">:</span> <span class="n">xarray</span><span class="o">.</span><span class="n">Dataset</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">xarray</span><span class="o">.</span><span class="n">DataArray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;A function that takes input data that includes input-variables required to calculate the output_var.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        xd : xarray.Dataset</span>
+<span class="sd">            A xarray.Dataset, often `EndogenousSystem._xa` (simulation data), or the `EndogenousSystem._past`.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        xarray.DataArray</span>
+<span class="sd">            Returns a DataArray with the output_var, properly indexed.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        NotImplementedError</span>
+<span class="sd">            This is just the base class that other Variable classes inherits. This class is not meant to be instantiated.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="VariableSingleEdge">
+<a class="viewcode-back" href="../../api.html#polimpact.variables.VariableSingleEdge">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">eq</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">VariableSingleEdge</span><span class="p">(</span><span class="n">Variable</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A variable class that holds the information necessary to represent a variable model or transformation in the simulation system.</span>
+<span class="sd">    Not used for statistical models (see `config.InputModel`). Helper class that I will probably regret.</span>
+<span class="sd">    Used for all Variables that only take one input variable.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    output_var : str</span>
+<span class="sd">        Name of the output variable</span>
+<span class="sd">    subset : int</span>
+<span class="sd">        Endogenous simulation requires that all variables are fully specified in a circular fashion.</span>
+<span class="sd">        At the same time, there cannot be any circular definitions in the transformation step, nor in the forecast step.</span>
+<span class="sd">        If the variable is subset == 0, it is estimated/calculated in the transformation step, if it is 1, it is in the forecast step.</span>
+<span class="sd">    input_var : str</span>
+<span class="sd">        Name of the input variable</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">input_var</span><span class="p">:</span> <span class="nb">str</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">edges</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;An edge representation (list of tuples) that interface well with NetworkX graphs.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        List[Tuple[str, str]]</span>
+<span class="sd">            A graph edge describing the link between the input_var and the output_var.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[(</span><span class="bp">self</span><span class="o">.</span><span class="n">input_var</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_var</span><span class="p">)]</span></div>
+
+
+
+<div class="viewcode-block" id="VariableTransform">
+<a class="viewcode-back" href="../../api.html#polimpact.variables.VariableTransform">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">eq</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">VariableTransform</span><span class="p">(</span><span class="n">Variable</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A class holding the information necessary to do a mathematical transformation of input-variables to calculate a new output variable.</span>
+<span class="sd">    This class only supports transformations that are static in time, e.g., log-transformations, multiplications, etc. It is using `formulae.design_matrices()`</span>
+<span class="sd">    to do the transformation.</span>
+
+<span class="sd">    Caution! The Wilkinson formula language have some gotcha&#39;s. For instance, &quot;var1 + var2&quot; will give you a matrix with two columns, not a matrix</span>
+<span class="sd">    with one column being the sum of var1 and var2. To achieve the latter, you need to write &quot;I(var1 + var2)&quot;. Any numpy (&quot;np.&quot;) and scipy (&quot;scipy.&quot;)</span>
+<span class="sd">    tranformative function is in principle also supported. E.g., &quot;np.sum(var1, var2)&quot; would achieve the same.</span>
+<span class="sd">    It is also important to note the difference between &quot;var1:var2&quot; and &quot;var1*var2&quot;.</span>
+
+<span class="sd">    Warning! Currently, there is nothing stopping you making a design matrix with multiple columns. This is not supported.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    output_var : str</span>
+<span class="sd">        Name of the output variable</span>
+<span class="sd">    subset : int</span>
+<span class="sd">        Endogenous simulation requires that all variables are fully specified in a circular fashion.</span>
+<span class="sd">        At the same time, there cannot be any circular definitions in the transformation step, nor in the forecast step.</span>
+<span class="sd">        If the variable is subset == 0, it is estimated/calculated in the transformation step, if it is 1, it is in the forecast step.</span>
+<span class="sd">    formula : str</span>
+<span class="sd">        A Wilkinson formula supported by `formulae`. See https://bambinos.github.io/formulae/notebooks/getting_started.html#User-guide.</span>
+<span class="sd">    input_vars : list[str]</span>
+<span class="sd">        List with names of the input variables.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">formula</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">input_vars</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">edges</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The edges between input variables and the transformed output variable that interface well with NetworkX graphs.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        List[Tuple[str, str]]</span>
+<span class="sd">            A list of graph edges describing the link between the input_var and the output_var.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[(</span><span class="n">input_var</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_var</span><span class="p">)</span> <span class="k">for</span> <span class="n">input_var</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_vars</span><span class="p">]</span>
+
+<div class="viewcode-block" id="VariableTransform.calc">
+<a class="viewcode-back" href="../../api.html#polimpact.variables.VariableTransform.calc">[docs]</a>
+    <span class="k">def</span> <span class="nf">calc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xd</span><span class="p">:</span> <span class="n">xarray</span><span class="o">.</span><span class="n">Dataset</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">xarray</span><span class="o">.</span><span class="n">DataArray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;A variable transformation function that takes input data that includes input-variables required to calculate the output_var.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        xd : xarray.Dataset</span>
+<span class="sd">            A xarray.Dataset, often `EndogenousSystem._xa` (simulation data), or the `EndogenousSystem._past`.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        xarray.DataArray</span>
+<span class="sd">            Returns a DataArray with the output_var, properly indexed.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="n">xd</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">input_vars</span><span class="p">]</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span>
+        <span class="n">ind</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Index</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">design_matrices</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;0 + </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">formula</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">na_action</span><span class="o">=</span><span class="s2">&quot;pass&quot;</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">as_dataframe</span><span class="p">()</span>
+        <span class="n">varname</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="n">varname</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_var</span><span class="p">})</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span><span class="o">.</span><span class="n">to_xarray</span><span class="p">()</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="VariableDifference">
+<a class="viewcode-back" href="../../api.html#polimpact.variables.VariableDifference">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">eq</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">VariableDifference</span><span class="p">(</span><span class="n">VariableSingleEdge</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A Variable class for the 1-year growth transformation function. There is room for generalization here.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    output_var : str</span>
+<span class="sd">        Name of the output variable</span>
+<span class="sd">    subset : int</span>
+<span class="sd">        Endogenous simulation requires that all variables are fully specified in a circular fashion.</span>
+<span class="sd">        At the same time, there cannot be any circular definitions in the transformation step, nor in the forecast step.</span>
+<span class="sd">        If the variable is subset == 0, it is estimated/calculated in the transformation step, if it is 1, it is in the forecast step.</span>
+<span class="sd">    input_var : str</span>
+<span class="sd">        Name of the input variable</span>
+<span class="sd">    type : Literal[&quot;growth]</span>
+<span class="sd">        Currently only supports &quot;growth&quot; as case. Any temporal difference function could in principle be supported here.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="nb">type</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;growth&quot;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;growth&quot;</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="fm">__repr__</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="si">}</span><span class="s2"> is not implemented.&quot;</span>
+            <span class="p">)</span>
+
+<div class="viewcode-block" id="VariableDifference.calc">
+<a class="viewcode-back" href="../../api.html#polimpact.variables.VariableDifference.calc">[docs]</a>
+    <span class="k">def</span> <span class="nf">calc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xd</span><span class="p">:</span> <span class="n">xarray</span><span class="o">.</span><span class="n">Dataset</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">xarray</span><span class="o">.</span><span class="n">DataArray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;A growth function that takes a single input variable and outputs the growth from t-1 to t. This calculates the exact growth, and</span>
+<span class="sd">        not growth based on log difference. Uses xarray internal functions.</span>
+
+<span class="sd">        Warning! Divide by zero is a possibility here.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        xd : xarray.Dataset</span>
+<span class="sd">            A xarray.Dataset, often `EndogenousSystem._xa` (simulation data), or the `EndogenousSystem._past`.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        xarray.DataArray</span>
+<span class="sd">            Returns a DataArray with the output_var, properly indexed.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">arr</span><span class="p">:</span> <span class="n">xarray</span><span class="o">.</span><span class="n">DataArray</span> <span class="o">=</span> <span class="n">xd</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">input_var</span><span class="p">]</span>
+        <span class="k">match</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">:</span>
+            <span class="k">case</span> <span class="s2">&quot;growth&quot;</span><span class="p">:</span>
+                <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">arr</span> <span class="o">-</span> <span class="n">arr</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">ds</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span> <span class="o">/</span> <span class="n">arr</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">ds</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">res</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_var</span>
+                <span class="k">return</span> <span class="n">res</span>
+            <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="VariableRolling">
+<a class="viewcode-back" href="../../api.html#polimpact.variables.VariableRolling">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">eq</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">VariableRolling</span><span class="p">(</span><span class="n">VariableSingleEdge</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A Variable class for rolling time-series functions. Rolling means and sums, as well as exponentially weighted moving windows are supported.</span>
+<span class="sd">    See `xarray.Dataset.rolling` and `xarray.Dataset.rolling_exp` for details.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    output_var : str</span>
+<span class="sd">        Name of the output variable</span>
+<span class="sd">    subset : int</span>
+<span class="sd">        Endogenous simulation requires that all variables are fully specified in a circular fashion.</span>
+<span class="sd">        At the same time, there cannot be any circular definitions in the transformation step, nor in the forecast step.</span>
+<span class="sd">        If the variable is subset == 0, it is estimated/calculated in the transformation step, if it is 1, it is in the forecast step.</span>
+<span class="sd">    input_var : str</span>
+<span class="sd">        Name of the input variable</span>
+<span class="sd">    window : int</span>
+<span class="sd">        The window size in time-units.</span>
+<span class="sd">    fun : Literal[&quot;mean&quot;, &quot;sum]</span>
+<span class="sd">        The aggregation function (rolling mean or rolling sum).</span>
+<span class="sd">    window_type : Literal[&quot;normal&quot;, &quot;span&quot;, &quot;com&quot;, &quot;halflife&quot;, &quot;alpha&quot;]</span>
+<span class="sd">        &quot;normal&quot; is equally weighted. See `pandas.DataFrame.ewm` for details on the rest.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">window</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">fun</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;sum&quot;</span><span class="p">]</span>
+    <span class="n">window_type</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;normal&quot;</span><span class="p">,</span> <span class="s2">&quot;span&quot;</span><span class="p">,</span> <span class="s2">&quot;com&quot;</span><span class="p">,</span> <span class="s2">&quot;halflife&quot;</span><span class="p">,</span> <span class="s2">&quot;alpha&quot;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fun</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;sum&quot;</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="fm">__repr__</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">fun</span><span class="si">}</span><span class="s2"> is not implemented.&quot;</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">window_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;normal&quot;</span><span class="p">,</span> <span class="s2">&quot;span&quot;</span><span class="p">,</span> <span class="s2">&quot;com&quot;</span><span class="p">,</span> <span class="s2">&quot;halflife&quot;</span><span class="p">,</span> <span class="s2">&quot;alpha&quot;</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="fm">__repr__</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">window_type</span><span class="si">}</span><span class="s2"> is not implemented.&quot;</span>
+            <span class="p">)</span>
+
+<div class="viewcode-block" id="VariableRolling.calc">
+<a class="viewcode-back" href="../../api.html#polimpact.variables.VariableRolling.calc">[docs]</a>
+    <span class="k">def</span> <span class="nf">calc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xd</span><span class="p">:</span> <span class="n">xarray</span><span class="o">.</span><span class="n">Dataset</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">xarray</span><span class="o">.</span><span class="n">DataArray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculates the temporally rolling transformations given an xarray.Dataset that includes the input_var. Uses xarray internal functions.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        xd : xarray.Dataset</span>
+<span class="sd">            A xarray.Dataset, often `EndogenousSystem._xa` (simulation data), or the `EndogenousSystem._past`.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        xarray.DataArray</span>
+<span class="sd">            Returns a DataArray with the output_var, properly indexed.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        NotImplementedError</span>
+<span class="sd">            `fun` must be &quot;mean&quot; or &quot;sum&quot;. Any other aggregation function is not supported.</span>
+<span class="sd">        NotImplementedError</span>
+<span class="sd">            `window_type` must be &quot;normal&quot;, &quot;span&quot;, &quot;com&quot;, &quot;halflife&quot;, or &quot;alpha&quot;. Other types are not supported.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">match</span> <span class="bp">self</span><span class="o">.</span><span class="n">window_type</span><span class="p">:</span>
+            <span class="k">case</span> <span class="s2">&quot;normal&quot;</span><span class="p">:</span>
+                <span class="n">roller</span><span class="p">:</span> <span class="n">DataArrayRolling</span> <span class="o">|</span> <span class="n">RollingExp</span> <span class="o">=</span> <span class="n">xd</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">input_var</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span>
+                    <span class="n">ds</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">window</span>
+                <span class="p">)</span>
+            <span class="k">case</span> <span class="s2">&quot;span&quot;</span> <span class="o">|</span> <span class="s2">&quot;com&quot;</span> <span class="o">|</span> <span class="s2">&quot;halflife&quot;</span> <span class="o">|</span> <span class="s2">&quot;alpha&quot;</span><span class="p">:</span>
+                <span class="n">roller</span><span class="p">:</span> <span class="n">DataArrayRolling</span> <span class="o">|</span> <span class="n">RollingExp</span> <span class="o">=</span> <span class="n">xd</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">input_var</span><span class="p">]</span><span class="o">.</span><span class="n">rolling_exp</span><span class="p">(</span>
+                    <span class="n">ds</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="p">,</span> <span class="n">window_type</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">window_type</span>
+                <span class="p">)</span>
+            <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+        <span class="k">match</span> <span class="bp">self</span><span class="o">.</span><span class="n">fun</span><span class="p">:</span>
+            <span class="k">case</span> <span class="s2">&quot;mean&quot;</span><span class="p">:</span>
+                <span class="n">res</span><span class="p">:</span> <span class="n">xarray</span><span class="o">.</span><span class="n">DataArray</span> <span class="o">=</span> <span class="n">roller</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+            <span class="k">case</span> <span class="s2">&quot;sum&quot;</span><span class="p">:</span>
+                <span class="n">res</span><span class="p">:</span> <span class="n">xarray</span><span class="o">.</span><span class="n">DataArray</span> <span class="o">=</span> <span class="n">roller</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+            <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_var</span>
+        <span class="k">return</span> <span class="n">res</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="VariableLag">
+<a class="viewcode-back" href="../../api.html#polimpact.variables.VariableLag">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">eq</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">VariableLag</span><span class="p">(</span><span class="n">VariableSingleEdge</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A Variable class for lagged variables (temporal offset). Uses `xarray.DataArray.shift`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    output_var : str</span>
+<span class="sd">        Name of the output variable</span>
+<span class="sd">    subset : int</span>
+<span class="sd">        Endogenous simulation requires that all variables are fully specified in a circular fashion.</span>
+<span class="sd">        At the same time, there cannot be any circular definitions in the transformation step, nor in the forecast step.</span>
+<span class="sd">        If the variable is subset == 0, it is estimated/calculated in the transformation step, if it is 1, it is in the forecast step.</span>
+<span class="sd">    input_var : str</span>
+<span class="sd">        Name of the input variable</span>
+<span class="sd">    num_lag : int</span>
+<span class="sd">        How many time-units to offset. E.g., 1 would lag a time-series 1 time-unit compared to the input_var.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">input_var</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">num_lag</span><span class="p">:</span> <span class="nb">int</span>
+
+<div class="viewcode-block" id="VariableLag.calc">
+<a class="viewcode-back" href="../../api.html#polimpact.variables.VariableLag.calc">[docs]</a>
+    <span class="k">def</span> <span class="nf">calc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xd</span><span class="p">:</span> <span class="n">xarray</span><span class="o">.</span><span class="n">Dataset</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">xarray</span><span class="o">.</span><span class="n">DataArray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculates the lagged output variable given a xarray.Dataset that includes the input variable.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        xd : xarray.Dataset</span>
+<span class="sd">            A xarray.Dataset, often `EndogenousSystem._xa` (simulation data), or the `EndogenousSystem._past`.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        xarray.DataArray</span>
+<span class="sd">            Returns a DataArray with the output_var, properly indexed.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">res</span><span class="p">:</span> <span class="n">xarray</span><span class="o">.</span><span class="n">DataArray</span> <span class="o">=</span> <span class="n">xd</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">input_var</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">ds</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">num_lag</span><span class="p">)</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_var</span>
+        <span class="k">return</span> <span class="n">res</span></div>
+</div>
+
+</pre></div>
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, PRIO
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=6ca3c713"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/tabs.js?v=3ee01567"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=36e5451b"></script>
+    </body>
+</html>

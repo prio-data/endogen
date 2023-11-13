@@ -1,0 +1,783 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>endogen.endogen - ENDOGEN 0.01 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: #00718f;
+  --color-brand-content: #00718f;
+  --color-background-secondary: #fafafa;
+  --color-problematic: #c41230;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #00718f;
+  --color-brand-content: #00718f;
+  --color-problematic: #e87722;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #00718f;
+  --color-brand-content: #00718f;
+  --color-problematic: #e87722;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">ENDOGEN 0.01 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  
+  <span class="sidebar-brand-text">ENDOGEN 0.01 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../useage.html">Useage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <h1>Source code for endogen.endogen</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">.config</span> <span class="kn">import</span> <span class="n">InputModel</span><span class="p">,</span> <span class="n">Differences</span><span class="p">,</span> <span class="n">Lags</span><span class="p">,</span> <span class="n">Rolling</span><span class="p">,</span> <span class="n">Transform</span>
+<span class="kn">from</span> <span class="nn">.variables</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Variable</span><span class="p">,</span>
+    <span class="n">VariableLag</span><span class="p">,</span>
+    <span class="n">VariableRolling</span><span class="p">,</span>
+    <span class="n">VariableDifference</span><span class="p">,</span>
+    <span class="n">VariableTransform</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">.tools</span> <span class="kn">import</span> <span class="n">measure</span><span class="p">,</span> <span class="n">flatten</span><span class="p">,</span> <span class="n">flatten_recursive</span>
+<span class="kn">from</span> <span class="nn">.data_utilities</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">read_input_data</span><span class="p">,</span>
+    <span class="n">drop_superfluous</span><span class="p">,</span>
+    <span class="n">drop_missing_units</span><span class="p">,</span>
+    <span class="n">generate_comparison_report</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">.utilities</span> <span class="kn">import</span> <span class="n">PanelUnits</span>
+<span class="kn">from</span> <span class="nn">.adapter_mlforecast</span> <span class="kn">import</span> <span class="n">forecast_mlforecast</span>
+
+<span class="kn">import</span> <span class="nn">xarray</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
+<span class="kn">import</span> <span class="nn">itertools</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">collections</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">BaseEstimator</span>
+<span class="kn">from</span> <span class="nn">sklearn.exceptions</span> <span class="kn">import</span> <span class="n">NotFittedError</span>
+
+<span class="kn">from</span> <span class="nn">mlforecast.forecast</span> <span class="kn">import</span> <span class="n">MLForecast</span>
+<span class="kn">from</span> <span class="nn">mlforecast.utils</span> <span class="kn">import</span> <span class="n">PredictionIntervals</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">formulae</span> <span class="kn">import</span> <span class="n">design_matrices</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Literal</span>
+
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="ModelSchedule">
+<a class="viewcode-back" href="../../api.html#endogen.endogen.ModelSchedule">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">ModelSchedule</span><span class="p">:</span>
+    <span class="n">delta_t</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">schedule</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span></div>
+
+
+
+<div class="viewcode-block" id="ModelController">
+<a class="viewcode-back" href="../../api.html#endogen.endogen.ModelController">[docs]</a>
+<span class="k">class</span> <span class="nc">ModelController</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A controller for organizing and scheduling models.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_models</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_graph</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+
+<div class="viewcode-block" id="ModelController.add_models">
+<a class="viewcode-back" href="../../api.html#endogen.endogen.ModelController.add_models">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_models</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">models</span><span class="p">:</span> <span class="n">InputModel</span> <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">InputModel</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a model to the system.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        model : VariableModel</span>
+<span class="sd">            Any model type supported by the VariableModel class.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">models</span><span class="p">,</span> <span class="n">InputModel</span><span class="p">):</span>
+            <span class="n">models</span> <span class="o">=</span> <span class="p">[</span><span class="n">models</span><span class="p">]</span>
+
+        <span class="n">output_vars</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">output_var</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_models</span><span class="p">]</span>
+        <span class="n">new_models</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">models</span> <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">output_var</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">output_vars</span><span class="p">]</span>
+        <span class="n">models_already_exists</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">m</span><span class="o">.</span><span class="n">output_var</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">models</span> <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">output_var</span> <span class="ow">in</span> <span class="n">output_vars</span>
+        <span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">models_already_exists</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Models for variables: </span><span class="si">{</span><span class="n">models_already_exists</span><span class="si">}</span><span class="s2"> are already loaded in the system. Please remove before adding.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_models</span> <span class="o">=</span> <span class="p">[</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_models</span><span class="p">,</span> <span class="o">*</span><span class="n">new_models</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_models_to_graph</span><span class="p">()</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">models</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">InputModel</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_models</span>
+
+    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        <span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">multipartite_layout</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">path</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_models_to_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">def</span> <span class="nf">test_for_cyclic_graph</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">edges</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">T</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">:</span>
+                <span class="n">T</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="o">*</span><span class="n">edge</span><span class="p">)</span>
+                <span class="k">assert</span> <span class="n">nx</span><span class="o">.</span><span class="n">is_directed_acyclic_graph</span><span class="p">(</span>
+                    <span class="n">T</span>
+                <span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;Adding edge: </span><span class="si">{</span><span class="n">edge</span><span class="si">}</span><span class="s2"> would introduce cyclic graphs.&quot;</span>
+
+        <span class="n">variable_types</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;lags&quot;</span><span class="p">,</span> <span class="s2">&quot;differences&quot;</span><span class="p">,</span> <span class="s2">&quot;rolling&quot;</span><span class="p">,</span> <span class="s2">&quot;transforms&quot;</span><span class="p">]</span>
+
+        <span class="n">variables</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">var_type</span> <span class="ow">in</span> <span class="n">variable_types</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">models</span><span class="p">:</span>
+                <span class="n">variable_recipies</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">var_type</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">variable_recipies</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="nb">vars</span> <span class="o">=</span> <span class="p">[</span><span class="n">recip</span><span class="o">.</span><span class="n">get_variables</span><span class="p">()</span> <span class="k">for</span> <span class="n">recip</span> <span class="ow">in</span> <span class="n">variable_recipies</span><span class="p">]</span>
+                    <span class="n">variables</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">vars</span><span class="p">)</span>
+        <span class="n">variables</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Variable</span><span class="p">]</span> <span class="o">=</span> <span class="n">flatten_recursive</span><span class="p">([</span><span class="n">variables</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">models</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="nb">set</span><span class="p">([</span><span class="n">var</span><span class="o">.</span><span class="n">subset</span> <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">variables</span><span class="p">])</span> <span class="o">!=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">}:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s1">&#39;Models must contain subsets 0 (&quot;before forecast&quot;) and 1 (&quot;after forecast&quot;), and not any others.&#39;</span>
+            <span class="p">)</span>
+
+        <span class="c1"># There cannot be cycles before the forecast or during the forecast (each must be a DAG)</span>
+        <span class="k">for</span> <span class="n">subset</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>
+            <span class="n">edges</span> <span class="o">=</span> <span class="n">flatten_recursive</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">edges</span> <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">variables</span> <span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">subset</span> <span class="o">==</span> <span class="n">subset</span><span class="p">]</span>
+            <span class="p">)</span>
+            <span class="n">test_for_cyclic_graph</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="p">,</span> <span class="n">edges</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">flatten_recursive</span><span class="p">([</span><span class="n">var</span><span class="o">.</span><span class="n">edges</span> <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">variables</span><span class="p">]))</span>
+
+        <span class="n">nodes</span> <span class="o">=</span> <span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">node</span> <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">variables</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">prepare_nodes</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">var</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">variables</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">InputModel</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">derived_nodes</span> <span class="o">=</span> <span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">variables</span> <span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">subset</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">forecast_nodes</span> <span class="o">=</span> <span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">variables</span> <span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">subset</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
+
+        <span class="c1"># There cannot be any variables without a model.</span>
+        <span class="n">empty_nodes</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">n</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="p">{}</span>
+        <span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">empty_nodes</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A model is missing for these variables: </span><span class="si">{</span><span class="n">empty_nodes</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># The complete graph should be completely cyclic (all nodes should have a cycle)</span>
+        <span class="c1"># Perhaps put this into a try-except to catch the error more gracefully</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">):</span>
+            <span class="n">nx</span><span class="o">.</span><span class="n">find_cycle</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="p">,</span> <span class="n">node</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">_model_schedule</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">ModelSchedule</span><span class="p">,</span> <span class="n">ModelSchedule</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns a schedule generator used to process variables in the correct order.&quot;&quot;&quot;</span>
+        <span class="n">t0</span><span class="p">:</span> <span class="n">ModelSchedule</span> <span class="o">=</span> <span class="n">ModelSchedule</span><span class="p">(</span>
+            <span class="n">delta_t</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="n">schedule</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span>
+                <span class="n">nx</span><span class="o">.</span><span class="n">topological_generations</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">derived_nodes</span><span class="p">)),</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
+        <span class="n">t1</span><span class="p">:</span> <span class="n">ModelSchedule</span> <span class="o">=</span> <span class="n">ModelSchedule</span><span class="p">(</span>
+            <span class="n">delta_t</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">schedule</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span>
+                <span class="n">nx</span><span class="o">.</span><span class="n">topological_generations</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">forecast_nodes</span><span class="p">)),</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">t0</span><span class="p">,</span> <span class="n">t1</span></div>
+
+
+
+<div class="viewcode-block" id="EndogenousSystem">
+<a class="viewcode-back" href="../../api.html#endogen.endogen.EndogenousSystem">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">EndogenousSystem</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An endogenous panel-data system of models/nodes with associated methods for correct scheduling of model forecasts.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    input_data : str or pandas.DataFrame</span>
+<span class="sd">        Panel data (or path to data) that includes all variables required by the forecasting system (and possibly fitting of models).</span>
+<span class="sd">    time_var : str</span>
+<span class="sd">        The variable name indicating time in input_data.</span>
+<span class="sd">    unit_var : str</span>
+<span class="sd">        The variable name indicating units in input_data.</span>
+<span class="sd">    nsim : int</span>
+<span class="sd">        The number of independent simulations of the endogenous system.</span>
+<span class="sd">    start: int</span>
+<span class="sd">        The number on the same scale as time_var when forecasting should start.</span>
+<span class="sd">    end : int</span>
+<span class="sd">        The number on the same scale as time_var when forecasting should end.</span>
+<span class="sd">    vars : Optional[Sequence[str]]</span>
+<span class="sd">        A subset of variables in input_data. Defaults to all variables in input_data.</span>
+<span class="sd">    include_past_n : Optional[int]</span>
+<span class="sd">        How much of the past to include when fitting statistical models.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">input_data</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">os</span><span class="o">.</span><span class="n">PathLike</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
+    <span class="n">time_var</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">unit_var</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">nsim</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">end</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="nb">vars</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
+    <span class="n">start</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">include_past_n</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;EndogenousSystem(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_xa</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pnames</span> <span class="o">=</span> <span class="n">PanelUnits</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time_var</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit_var</span><span class="p">)</span>
+
+        <span class="c1"># Read input-data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span> <span class="o">=</span> <span class="n">read_input_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">)</span>
+
+        <span class="c1"># Use variables in the input-data unless specified</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vars</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">var</span>
+                <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="o">.</span><span class="n">columns</span>
+                <span class="k">if</span> <span class="n">var</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">time_var</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit_var</span><span class="p">]</span>
+            <span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vars</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">var</span> <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vars</span> <span class="k">if</span> <span class="n">var</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">time_var</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit_var</span><span class="p">]</span>
+            <span class="p">]</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">start</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">start</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">pnames</span><span class="o">.</span><span class="n">time_var</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+        <span class="n">data_to_xarray</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">[</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">input_data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">pnames</span><span class="o">.</span><span class="n">time_var</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start</span>
+        <span class="p">]</span>
+
+        <span class="n">report</span> <span class="o">=</span> <span class="n">generate_comparison_report</span><span class="p">(</span>
+            <span class="n">data_to_xarray</span><span class="p">,</span>
+            <span class="n">time_var</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pnames</span><span class="o">.</span><span class="n">time_var</span><span class="p">,</span>
+            <span class="n">unit_var</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pnames</span><span class="o">.</span><span class="n">unit_var</span><span class="p">,</span>
+            <span class="n">alternative_time_comparison</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">missing_units</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span><span class="o">.</span><span class="n">union</span><span class="p">(</span>
+            <span class="o">*</span><span class="n">report</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">include_past_n</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">)][</span>
+                <span class="s2">&quot;missing&quot;</span>
+            <span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">missing_units</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;The following units were removed to attain a balanced dataset over </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">include_past_n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2"> years: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">missing_units</span><span class="si">}</span><span class="s2">.&quot;</span>
+            <span class="p">)</span>
+        <span class="n">data_to_xarray</span> <span class="o">=</span> <span class="n">data_to_xarray</span><span class="p">[</span>
+            <span class="o">~</span><span class="n">data_to_xarray</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">pnames</span><span class="o">.</span><span class="n">unit_var</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">missing_units</span><span class="p">)</span>
+        <span class="p">]</span>
+
+        <span class="n">data_to_xarray</span> <span class="o">=</span> <span class="n">drop_superfluous</span><span class="p">(</span>
+            <span class="n">data_to_xarray</span><span class="p">,</span>
+            <span class="n">time_var</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pnames</span><span class="o">.</span><span class="n">time_var</span><span class="p">,</span>
+            <span class="n">unit_var</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pnames</span><span class="o">.</span><span class="n">unit_var</span><span class="p">,</span>
+            <span class="n">alternative_time_comparison</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">data_to_xarray</span> <span class="o">=</span> <span class="n">drop_missing_units</span><span class="p">(</span>
+            <span class="n">data_to_xarray</span><span class="p">,</span>
+            <span class="n">time_var</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pnames</span><span class="o">.</span><span class="n">time_var</span><span class="p">,</span>
+            <span class="n">unit_var</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pnames</span><span class="o">.</span><span class="n">unit_var</span><span class="p">,</span>
+            <span class="n">alternative_time_comparison</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">data_to_xarray</span> <span class="o">=</span> <span class="n">data_to_xarray</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pnames</span><span class="o">.</span><span class="n">to_dict</span><span class="p">())</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pnames</span><span class="o">.</span><span class="n">internal_index</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_past</span> <span class="o">=</span> <span class="n">data_to_xarray</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">to_xarray</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_past</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_past</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span>
+            <span class="n">ds</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">include_past_n</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">del</span> <span class="n">data_to_xarray</span>
+        <span class="c1"># Initialize the model-controller</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">models</span> <span class="o">=</span> <span class="n">ModelController</span><span class="p">()</span>
+
+        <span class="c1"># self.first_observation = self._past.coords[&quot;ds&quot;].values[0]</span>
+        <span class="c1"># self.current_time = self.start</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_make_container</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="nb">vars</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+        <span class="n">nsim</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">unit_index</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Index</span><span class="p">,</span>
+        <span class="n">time_index</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Index</span><span class="p">,</span>
+        <span class="n">ones</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">nvar</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">vars</span><span class="p">)</span>
+        <span class="n">nunit</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">unit_index</span><span class="p">)</span>
+        <span class="n">ntime</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">time_index</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">ones</span><span class="p">:</span>
+            <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">nvar</span><span class="p">,</span> <span class="n">ntime</span><span class="p">,</span> <span class="n">nunit</span><span class="p">,</span> <span class="n">nsim</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">nvar</span><span class="p">,</span> <span class="n">ntime</span><span class="p">,</span> <span class="n">nunit</span><span class="p">,</span> <span class="n">nsim</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">xarray</span><span class="o">.</span><span class="n">DataArray</span><span class="p">(</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">arr</span><span class="p">,</span>
+            <span class="n">dims</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;vars&quot;</span><span class="p">,</span> <span class="s2">&quot;ds&quot;</span><span class="p">,</span> <span class="s2">&quot;unique_id&quot;</span><span class="p">,</span> <span class="s2">&quot;sim&quot;</span><span class="p">],</span>
+            <span class="n">coords</span><span class="o">=</span><span class="p">{</span>
+                <span class="s2">&quot;vars&quot;</span><span class="p">:</span> <span class="nb">vars</span><span class="p">,</span>
+                <span class="s2">&quot;ds&quot;</span><span class="p">:</span> <span class="n">time_index</span><span class="p">,</span>
+                <span class="s2">&quot;unique_id&quot;</span><span class="p">:</span> <span class="n">unit_index</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">to_dataset</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s2">&quot;vars&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">create_forecast_container</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># To update self._past and self.vars with any transformations in self.models.models</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">prepare_data</span><span class="p">()</span>
+
+        <span class="n">time_index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Index</span><span class="p">(</span>
+            <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">include_past_n</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;ds&quot;</span>
+        <span class="p">)</span>
+        <span class="n">unit_index</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_past</span><span class="o">.</span><span class="n">indexes</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_xa</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_container</span><span class="p">(</span>
+            <span class="nb">vars</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">,</span>
+            <span class="n">nsim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nsim</span><span class="p">,</span>
+            <span class="n">unit_index</span><span class="o">=</span><span class="n">unit_index</span><span class="p">,</span>
+            <span class="n">time_index</span><span class="o">=</span><span class="n">time_index</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">include_past_n</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">include_past_n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">data_to_include</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">single_slice</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_past</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">ds</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">time_index</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">time_index</span><span class="o">.</span><span class="n">stop</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nsim</span><span class="p">):</span>
+                <span class="n">data_to_include</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">single_slice</span><span class="p">)</span>
+            <span class="n">data_to_include</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">data_to_include</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="s2">&quot;sim&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span>
+                <span class="s2">&quot;ds&quot;</span><span class="p">,</span> <span class="s2">&quot;unique_id&quot;</span><span class="p">,</span> <span class="s2">&quot;sim&quot;</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">update_sim</span><span class="p">(</span><span class="n">data_to_include</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">prepare_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">t0</span><span class="p">,</span> <span class="n">t1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">_model_schedule</span>
+
+        <span class="k">for</span> <span class="n">node_schedule</span> <span class="ow">in</span> <span class="n">t0</span><span class="o">.</span><span class="n">schedule</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">node_schedule</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">prepare_nodes</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_past</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+                        <span class="p">[</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_past</span><span class="p">,</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">_graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="s2">&quot;model&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">calc</span><span class="p">(</span><span class="n">xd</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_past</span><span class="p">),</span>
+                        <span class="p">]</span>
+                    <span class="p">)</span>
+
+        <span class="c1"># for node_schedule in t1.schedule:</span>
+        <span class="c1">#     for node in node_schedule:</span>
+        <span class="c1">#         if isinstance(node, str) and node in self.models.prepare_nodes:</span>
+        <span class="c1">#             self._past = xarray.merge(</span>
+        <span class="c1">#                 [</span>
+        <span class="c1">#                     self._past,</span>
+        <span class="c1">#                     self.models._graph.nodes[node][&quot;model&quot;].calc(xd=self._past),</span>
+        <span class="c1">#                 ]</span>
+        <span class="c1">#             )</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_past</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_past</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">to_xarray</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vars</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_past</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+    <span class="k">def</span> <span class="nf">fit_models</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">models</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">BaseEstimator</span><span class="p">):</span>
+                <span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_past</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span>
+                <span class="n">y</span><span class="p">,</span> <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">output_var</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">input_vars</span><span class="p">]</span>
+                <span class="n">model</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">MLForecast</span><span class="p">):</span>
+                <span class="n">data_variables</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span>
+                    <span class="n">itertools</span><span class="o">.</span><span class="n">chain</span><span class="p">([</span><span class="n">model</span><span class="o">.</span><span class="n">output_var</span><span class="p">],</span> <span class="n">model</span><span class="o">.</span><span class="n">input_vars</span><span class="p">)</span>
+                <span class="p">)</span>
+                <span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_past</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()[</span><span class="n">data_variables</span><span class="p">]</span>
+                <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="n">model</span><span class="o">.</span><span class="n">output_var</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">})</span>
+                <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="n">model</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+                    <span class="n">df</span><span class="p">,</span>
+                    <span class="n">static_features</span><span class="o">=</span><span class="p">[],</span>
+                    <span class="n">prediction_intervals</span><span class="o">=</span><span class="n">PredictionIntervals</span><span class="p">(</span><span class="n">n_windows</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+                <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">simulate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">levels</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">95</span><span class="p">]</span>
+        <span class="n">t0</span><span class="p">,</span> <span class="n">t1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">_model_schedule</span>
+        <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="p">):</span>
+            <span class="n">ds_index</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_xa</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">values</span> <span class="o">==</span> <span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">nonzero</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">schedules</span> <span class="ow">in</span> <span class="p">[</span><span class="n">t1</span><span class="p">,</span> <span class="n">t0</span><span class="p">]:</span>
+                <span class="k">for</span> <span class="n">node_schedule</span> <span class="ow">in</span> <span class="n">schedules</span><span class="o">.</span><span class="n">schedule</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">node_schedule</span><span class="p">:</span>
+                        <span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">_graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="s2">&quot;model&quot;</span><span class="p">]</span>
+
+                        <span class="n">input_vars</span> <span class="o">=</span> <span class="p">[</span>
+                            <span class="n">m</span><span class="o">.</span><span class="n">input_vars</span>
+                            <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">models</span>
+                            <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">output_var</span> <span class="o">==</span> <span class="n">node</span>
+                        <span class="p">]</span>
+                        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">input_vars</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                            <span class="n">input_vars</span> <span class="o">=</span> <span class="n">input_vars</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="k">del</span> <span class="n">input_vars</span>
+
+                        <span class="k">match</span> <span class="n">model</span><span class="p">:</span>
+                            <span class="k">case</span> <span class="n">VariableTransform</span><span class="p">():</span>
+                                <span class="bp">self</span><span class="o">.</span><span class="n">_xa</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="n">ds_index</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                                    <span class="n">model</span><span class="o">.</span><span class="n">calc</span><span class="p">(</span><span class="n">xd</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_xa</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">ds</span><span class="o">=</span><span class="n">t</span><span class="p">))</span>
+                                <span class="p">)[</span><span class="n">node</span><span class="p">]</span>
+                            <span class="k">case</span> <span class="n">VariableDifference</span><span class="p">()</span> <span class="o">|</span> <span class="n">VariableLag</span><span class="p">()</span> <span class="o">|</span> <span class="n">VariableRolling</span><span class="p">():</span>
+                                <span class="bp">self</span><span class="o">.</span><span class="n">_xa</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">calc</span><span class="p">(</span><span class="n">xd</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_xa</span><span class="p">)</span>
+                            <span class="k">case</span> <span class="n">BaseEstimator</span><span class="p">():</span>
+                                <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nsim</span><span class="p">):</span>
+                                    <span class="bp">self</span><span class="o">.</span><span class="n">_xa</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="n">ds_index</span><span class="p">,</span> <span class="p">:,</span> <span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span>
+                                        <span class="bp">self</span><span class="o">.</span><span class="n">_xa</span><span class="p">[</span><span class="n">input_vars</span><span class="p">]</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">t</span><span class="p">,</span> <span class="p">:,</span> <span class="n">s</span><span class="p">]</span>
+                                    <span class="p">)</span>
+                            <span class="k">case</span> <span class="n">MLForecast</span><span class="p">():</span>
+                                <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nsim</span><span class="p">):</span>
+                                    <span class="bp">self</span><span class="o">.</span><span class="n">_xa</span><span class="p">[</span><span class="n">node</span><span class="p">][</span>
+                                        <span class="n">ds_index</span><span class="p">,</span> <span class="p">:,</span> <span class="n">s</span>
+                                    <span class="p">]</span> <span class="o">=</span> <span class="n">forecast_mlforecast</span><span class="p">(</span>
+                                        <span class="n">t</span><span class="p">,</span>
+                                        <span class="n">s</span><span class="p">,</span>
+                                        <span class="n">model</span><span class="p">,</span>
+                                        <span class="bp">self</span><span class="o">.</span><span class="n">_xa</span><span class="p">,</span>
+                                        <span class="bp">self</span><span class="o">.</span><span class="n">pnames</span><span class="p">,</span>
+                                        <span class="n">node</span><span class="p">,</span>
+                                        <span class="n">input_vars</span><span class="p">,</span>
+                                        <span class="n">levels</span><span class="p">,</span>
+                                    <span class="p">)</span>
+                            <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+                                <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+                                    <span class="sa">f</span><span class="s2">&quot;Model of type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">model</span><span class="p">)</span><span class="si">}</span><span class="s2"> is not implemented.&quot;</span>
+                                <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">update_sim</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">xarray</span><span class="o">.</span><span class="n">Dataset</span> <span class="o">|</span> <span class="n">xarray</span><span class="o">.</span><span class="n">DataArray</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">xarray</span><span class="o">.</span><span class="n">Dataset</span><span class="p">):</span>
+            <span class="nb">vars</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+            <span class="n">t_index</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_xa</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">value</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">values</span>
+            <span class="p">]</span>
+            <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_xa</span><span class="p">[</span><span class="n">var</span><span class="p">][</span><span class="n">t_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="n">var</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">xarray</span><span class="o">.</span><span class="n">DataArray</span><span class="p">):</span>
+            <span class="n">t_index</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_xa</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">value</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">values</span>
+            <span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_xa</span><span class="p">[</span><span class="n">value</span><span class="o">.</span><span class="n">name</span><span class="p">][</span><span class="n">t_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Value must be either a xarray.Dataset or an xarray.DataArray object&quot;</span>
+            <span class="p">)</span>
+
+<div class="viewcode-block" id="EndogenousSystem.plot">
+<a class="viewcode-back" href="../../api.html#endogen.endogen.EndogenousSystem.plot">[docs]</a>
+    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">var</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">unit</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">start</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Plot method for historical and forecasted data.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        var : str</span>
+<span class="sd">            Name of the variable you want to plot</span>
+<span class="sd">        unit : Optional[Sequence[int]]</span>
+<span class="sd">            List of subset of units you want to plot in facets. Plot will otherwise show global statistics.</span>
+<span class="sd">        start : Optional[int]</span>
+<span class="sd">            Alternative start time. Plot will otherwise start as early as possible with the data given.</span>
+<span class="sd">        args :</span>
+<span class="sd">            Other arguments to pass to seaborn.relplot</span>
+<span class="sd">        kwargs : key, value pairings</span>
+<span class="sd">            Dictionary of keyword arguments to pass to seaborn.relplot</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        seaborn.FacetGrid</span>
+<span class="sd">            An object managing one or more subplots that correspond to conditional data subsets with convenient methods for batch-setting of axes attributes.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">start</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">start</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_past</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s2">&quot;ds&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">units</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_xa</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s2">&quot;unique_id&quot;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">units</span> <span class="o">=</span> <span class="n">unit</span>
+
+        <span class="n">forecast</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_xa</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">unique_id</span><span class="o">=</span><span class="n">units</span><span class="p">,</span> <span class="n">ds</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="p">))[</span>
+            <span class="n">var</span>
+        <span class="p">]</span>
+        <span class="n">past</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_past</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">unique_id</span><span class="o">=</span><span class="n">units</span><span class="p">,</span> <span class="n">ds</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">start</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))[</span><span class="n">var</span><span class="p">]</span>
+        <span class="n">forecast</span> <span class="o">=</span> <span class="n">forecast</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span>
+        <span class="n">past</span> <span class="o">=</span> <span class="n">past</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span>
+
+        <span class="n">forecast</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;forecast&quot;</span>
+        <span class="n">past</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;historical&quot;</span>
+        <span class="n">past</span><span class="p">[</span><span class="s2">&quot;sim&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">past</span> <span class="o">=</span> <span class="n">past</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">&quot;ds&quot;</span><span class="p">,</span> <span class="s2">&quot;unique_id&quot;</span><span class="p">,</span> <span class="s2">&quot;sim&quot;</span><span class="p">])</span>
+        <span class="n">forecast</span> <span class="o">=</span> <span class="n">forecast</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">&quot;ds&quot;</span><span class="p">,</span> <span class="s2">&quot;unique_id&quot;</span><span class="p">,</span> <span class="s2">&quot;sim&quot;</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">plot_object</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">relplot</span><span class="p">(</span>
+                <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">past</span><span class="p">,</span> <span class="n">forecast</span><span class="p">]),</span>
+                <span class="n">x</span><span class="o">=</span><span class="s2">&quot;ds&quot;</span><span class="p">,</span>
+                <span class="n">y</span><span class="o">=</span><span class="n">var</span><span class="p">,</span>
+                <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;type&quot;</span><span class="p">,</span>
+                <span class="n">errorbar</span><span class="o">=</span><span class="s2">&quot;sd&quot;</span><span class="p">,</span>
+                <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;line&quot;</span><span class="p">,</span>
+                <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">plot_object</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">relplot</span><span class="p">(</span>
+                <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">past</span><span class="p">,</span> <span class="n">forecast</span><span class="p">]),</span>
+                <span class="n">x</span><span class="o">=</span><span class="s2">&quot;ds&quot;</span><span class="p">,</span>
+                <span class="n">y</span><span class="o">=</span><span class="n">var</span><span class="p">,</span>
+                <span class="n">col</span><span class="o">=</span><span class="s2">&quot;unique_id&quot;</span><span class="p">,</span>
+                <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;type&quot;</span><span class="p">,</span>
+                <span class="n">errorbar</span><span class="o">=</span><span class="s2">&quot;sd&quot;</span><span class="p">,</span>
+                <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;line&quot;</span><span class="p">,</span>
+                <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">plot_object</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">start</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">plot_object</span></div>
+</div>
+
+</pre></div>
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, PRIO
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=6ca3c713"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/tabs.js?v=3ee01567"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=5d53a5da"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    </body>
+</html>

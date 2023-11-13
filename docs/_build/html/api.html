@@ -1,0 +1,1125 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Useage" href="useage.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>API - ENDOGEN 0.01 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: #00718f;
+  --color-brand-content: #00718f;
+  --color-background-secondary: #fafafa;
+  --color-problematic: #c41230;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #00718f;
+  --color-brand-content: #00718f;
+  --color-problematic: #e87722;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #00718f;
+  --color-brand-content: #00718f;
+  --color-problematic: #e87722;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">ENDOGEN 0.01 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">ENDOGEN 0.01 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="useage.html">Useage</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">API</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="api">
+<h1>API<a class="headerlink" href="#api" title="Link to this heading">#</a></h1>
+<section id="module-endogen.config">
+<span id="configuration"></span><h2>Configuration<a class="headerlink" href="#module-endogen.config" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="endogen.config.Config">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">endogen.config.</span></span><span class="sig-name descname"><span class="pre">Config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_variable_dict:</span> <span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">global_config:</span> <span class="pre">~endogen.config.GlobalSimConfig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variables:</span> <span class="pre">~typing.List[~endogen.config.InputModel]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/endogen/config.html#Config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.config.Config" title="Link to this definition">#</a></dt>
+<dd><p>Global configuration schema for the endogenous simulation.
+Can be used separately, or in conjunction with .yaml files and <cite>hydra.initialize</cite>, <cite>hydra.compose</cite>, and <cite>hydra.utils.instantiate</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>global_config</strong> (<a class="reference internal" href="#endogen.config.GlobalSimConfig" title="endogen.config.GlobalSimConfig"><em>GlobalSimConfig</em></a>) – Global simulation configuration options</p></li>
+<li><p><strong>variables</strong> (<em>list</em><em>[</em><a class="reference internal" href="#endogen.config.InputModel" title="endogen.config.InputModel"><em>InputModel</em></a><em>]</em>) – List of configuration schema for input models to include in endogenous simulation. Note restrictions on circularity, etc.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="endogen.config.Differences">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">endogen.config.</span></span><span class="sig-name descname"><span class="pre">Differences</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'growth'</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_vars</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/endogen/config.html#Differences"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.config.Differences" title="Link to this definition">#</a></dt>
+<dd><p>A schema for describing a growth variables and a factory for <cite>variables.VariableDifference</cite> variables.
+Can be used separately, or in conjunction with .yaml files and <cite>hydra.initialize</cite>, <cite>hydra.compose</cite>, and <cite>hydra.utils.instantiate</cite>.</p>
+<p>Will return output variables named the same as the input variables, only with “_gr” suffixed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<em>Literal</em><em>[</em><em>&quot;growth</em><em>]</em>) – Growth is currently the only difference function available. Note that dividing with zero is a possibility.</p></li>
+<li><p><strong>input_vars</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – List of input variables to transform.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="endogen.config.GlobalSimConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">endogen.config.</span></span><span class="sig-name descname"><span class="pre">GlobalSimConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_data:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_var:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_var:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsim:</span> <span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end:</span> <span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_past_n:</span> <span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start:</span> <span class="pre">int</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vars:</span> <span class="pre">~typing.List[str]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/endogen/config.html#GlobalSimConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.config.GlobalSimConfig" title="Link to this definition">#</a></dt>
+<dd><p>Configuration schema for global simulation options.
+Can be used separately, or in conjunction with .yaml files and <cite>hydra.initialize</cite>, <cite>hydra.compose</cite>, and <cite>hydra.utils.instantiate</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_data</strong> (<em>str</em>) – Path to input data in either .csv or .parquet file format. Used both for training and as initial values in simulation.</p></li>
+<li><p><strong>time_var</strong> (<em>str</em>) – Name of the variable in the input_data indicating the time dimension. The variable must be integer type.</p></li>
+<li><p><strong>unit_var</strong> (<em>str</em>) – Name of the variable in the input_data indicating the unit/spatial dimension. The variable must be integer type.</p></li>
+<li><p><strong>nsim</strong> (<em>int</em>) – Number of independent simulations to run.</p></li>
+<li><p><strong>end</strong> (<em>int</em>) – The time-unit to end simulation. Since these are fully described endogenous simulations, they can go indefinitely.</p></li>
+<li><p><strong>include_past_n</strong> (<em>int</em>) – How much of the past to include when fitting statistical models.</p></li>
+<li><p><strong>start</strong> (<em>int</em>) – The time-unit to start simulation. Must be an integer value found in the time_var series in the input_data.</p></li>
+<li><p><strong>vars</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – The subset of variables in the input_data to include.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="endogen.config.InputModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">endogen.config.</span></span><span class="sig-name descname"><span class="pre">InputModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">stage:</span> <span class="pre">~typing.Literal['writing',</span> <span class="pre">'evaluating',</span> <span class="pre">'production'],</span> <span class="pre">output_var:</span> <span class="pre">str,</span> <span class="pre">input_vars:</span> <span class="pre">~typing.List[str],</span> <span class="pre">model:</span> <span class="pre">~typing.Any,</span> <span class="pre">lags:</span> <span class="pre">~typing.List[~endogen.config.Lags]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;,</span> <span class="pre">rolling:</span> <span class="pre">~typing.List[~endogen.config.Rolling]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;,</span> <span class="pre">differences:</span> <span class="pre">~typing.List[~endogen.config.Differences]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;,</span> <span class="pre">transforms:</span> <span class="pre">~typing.List[~endogen.config.Transform]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;,</span> <span class="pre">subset:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/endogen/config.html#InputModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.config.InputModel" title="Link to this definition">#</a></dt>
+<dd><p>Configuration schema for statistical model of any variable, to be used in endogenous simulation.
+Can be used separately, or in conjunction with .yaml files and <cite>hydra.initialize</cite>, <cite>hydra.compose</cite>, and <cite>hydra.utils.instantiate</cite>.</p>
+<p>Endogenous simulation requires not only knowledge of the statistical model, but also of any other variable input in the model.
+Some of these might be statistical models on their own (e.g., an <cite>InputModel</cite>), whilst other variables might be variable transforms
+of various types (see the <cite>variables</cite> module). These models must be fully specified here. Note the naming conventions for variable transforms
+in the various <cite>config</cite> schemas. E.g., for referencing a 1-year lagged variable as input_var, you can put the non-lagged variable “var1” in <cite>InputModel.lags</cite>,
+and “var1_l1” in <cite>InputModel.input_vars</cite>. The <cite>endogen.ModelController</cite> will make sure variables are calculated in the correct sequence.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>stage</strong> (<em>Literal</em><em>[</em><em>&quot;writing&quot;</em><em>, </em><em>&quot;evaluating&quot;</em><em>, </em><em>&quot;production&quot;</em><em>]</em>) – Information on at which development-stage the InputModel can be said to live in. Can be useful in larger production settings.</p></li>
+<li><p><strong>output_var</strong> (<em>str</em>) – The name of the output variable in question.</p></li>
+<li><p><strong>input_vars</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – List of input variables the output variable needs in its model.</p></li>
+<li><p><strong>model</strong> (<em>Any</em>) – Any supported statistical (or otherwise) model class that can produce numerical output (forecasts) based on input data.
+Currently, that means any sklearn.base.BaseEstimator subclass or mlforecast.forecast.MLForecast</p></li>
+<li><p><strong>lags</strong> (<em>list</em><em>[</em><a class="reference internal" href="#endogen.config.Lags" title="endogen.config.Lags"><em>Lags</em></a><em>]</em>) – List of <cite>config.Lags</cite> necessary to build the <cite>input_vars</cite>.</p></li>
+<li><p><strong>rolling</strong> (<em>list</em><em>[</em><a class="reference internal" href="#endogen.config.Rolling" title="endogen.config.Rolling"><em>Rolling</em></a><em>]</em>) – List of <cite>config.Rolling</cite> necessary to build the <cite>input_vars</cite>.</p></li>
+<li><p><strong>differences</strong> (<em>list</em><em>[</em><a class="reference internal" href="#endogen.config.Differences" title="endogen.config.Differences"><em>Differences</em></a><em>]</em>) – List of <cite>config.Differences</cite> necessary to build the <cite>input_vars</cite>.</p></li>
+<li><p><strong>transforms</strong> (<em>list</em><em>[</em><em>Transforms</em><em>]</em>) – List of <cite>config.Transforms</cite> necessary to build the <cite>input_vars</cite>.</p></li>
+<li><p><strong>subset</strong> (<em>int</em>) – Endogenous simulation requires that all variables are fully specified in a circular fashion.
+At the same time, there cannot be any circular definitions in the transformation step, nor in the forecast step.
+If the variable is subset == 0, it is estimated/calculated in the transformation step, if it is 1, it is in the forecast step.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="endogen.config.InputModel.edges">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">edges</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#endogen.config.InputModel.edges" title="Link to this definition">#</a></dt>
+<dd><p>The edges between input variables and the output variable that interface well with NetworkX graphs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of graph edges describing the links between the input_vars and the output_var.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>List[Tuple[str, str]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="endogen.config.InputModel.node">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">node</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#endogen.config.InputModel.node" title="Link to this definition">#</a></dt>
+<dd><p>A node representation that interface well with NetworkX graphs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple where the first element is the output variable name (“node”), and the second element is a dictionary of node data.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple[str, Mapping[str, Any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="endogen.config.Lags">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">endogen.config.</span></span><span class="sig-name descname"><span class="pre">Lags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_lag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_vars</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/endogen/config.html#Lags"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.config.Lags" title="Link to this definition">#</a></dt>
+<dd><p>A schema for describing a lagged variables and a factory for <cite>variables.VariableLag</cite> variables.
+Can be used separately, or in conjunction with .yaml files and <cite>hydra.initialize</cite>, <cite>hydra.compose</cite>, and <cite>hydra.utils.instantiate</cite>.</p>
+<p>Will return output variables named the same as the input variables, only with “_l{num_lag}” suffixed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_lag</strong> (<em>int</em>) – How many time-units to offset. E.g., 1 would lag a time-series 1 time-unit compared to the input_var.</p></li>
+<li><p><strong>input_vars</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – List of input variables to transform.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="endogen.config.Rolling">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">endogen.config.</span></span><span class="sig-name descname"><span class="pre">Rolling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">funs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'mean'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'sum'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_vars</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'normal'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'span'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'com'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'halflife'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'alpha'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'normal'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/endogen/config.html#Rolling"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.config.Rolling" title="Link to this definition">#</a></dt>
+<dd><p>A schema for describing variables with “rolling” transformations and a factory for <cite>variables.VariableRolling</cite> variables.
+Can be used separately, or in conjunction with .yaml files and <cite>hydra.initialize</cite>, <cite>hydra.compose</cite>, and <cite>hydra.utils.instantiate</cite>.</p>
+<p>Will return output variables named the same as the input variables, only with a suffix according to this scheme:</p>
+<p>{input_var}_{window_type_suffix}{fun_suffix}{window} where:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>window_type</p></th>
+<th class="head"><p>suffix</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>normal</p></td>
+<td><p>_r</p></td>
+</tr>
+<tr class="row-odd"><td><p>span</p></td>
+<td><p>_rsp</p></td>
+</tr>
+<tr class="row-even"><td><p>com</p></td>
+<td><p>_rc</p></td>
+</tr>
+<tr class="row-odd"><td><p>halflife</p></td>
+<td><p>_hl</p></td>
+</tr>
+<tr class="row-even"><td><p>alpha</p></td>
+<td><p>_ral</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>fun</p></th>
+<th class="head"><p>suffix</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>mean</p></td>
+<td><p>m</p></td>
+</tr>
+<tr class="row-odd"><td><p>sum</p></td>
+<td><p>s</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>window</strong> (<em>int</em>) – The window size in time-units.</p></li>
+<li><p><strong>funs</strong> (<em>list</em><em>[</em><em>Literal</em><em>[</em><em>&quot;mean&quot;</em><em>, </em><em>&quot;sum</em><em>]</em><em>]</em>) – List of aggregation functions (rolling mean or rolling sum).</p></li>
+<li><p><strong>input_vars</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – List of input variables to transform.</p></li>
+<li><p><strong>window_type</strong> (<em>Literal</em><em>[</em><em>&quot;normal&quot;</em><em>, </em><em>&quot;span&quot;</em><em>, </em><em>&quot;com&quot;</em><em>, </em><em>&quot;halflife&quot;</em><em>, </em><em>&quot;alpha&quot;</em><em>]</em>) – “normal” is equally weighted. See <cite>pandas.DataFrame.ewm</cite> for details on the rest.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="endogen.config.Transform">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">endogen.config.</span></span><span class="sig-name descname"><span class="pre">Transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_vars</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formula</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">after_forecast</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/endogen/config.html#Transform"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.config.Transform" title="Link to this definition">#</a></dt>
+<dd><p>A schema for describing a variable transform and a factory for <cite>variables.VariableTransform</cite> variables.
+Can be used separately, or in conjunction with .yaml files and <cite>hydra.initialize</cite>, <cite>hydra.compose</cite>, and <cite>hydra.utils.instantiate</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output_var</strong> (<em>str</em>) – Name of the output variable</p></li>
+<li><p><strong>input_vars</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – List of input variables needed to create the output variable</p></li>
+<li><p><strong>formula</strong> (<em>str</em>) – A Wilkinson formula supported by <cite>formulae</cite>. See <a class="reference external" href="https://bambinos.github.io/formulae/notebooks/getting_started.html#User-guide">https://bambinos.github.io/formulae/notebooks/getting_started.html#User-guide</a>.</p></li>
+<li><p><strong>after_forecast</strong> (<em>bool</em>) – Endogenous simulation requires that all variables are fully specified in a circular fashion.
+At the same time, there cannot be any circular definitions in the transformation step, nor in the forecast step.
+If after_forecast is True, the variable is estimated/calculated in the forecast step.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="endogen.config.Transform.get_variables">
+<span class="sig-name descname"><span class="pre">get_variables</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#endogen.variables.VariableTransform" title="endogen.variables.VariableTransform"><span class="pre">VariableTransform</span></a></span></span><a class="reference internal" href="_modules/endogen/config.html#Transform.get_variables"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.config.Transform.get_variables" title="Link to this definition">#</a></dt>
+<dd><p>Helper function to create a VariableTransform.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#endogen.variables.VariableTransform" title="endogen.variables.VariableTransform">VariableTransform</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-endogen.endogen">
+<span id="endogen-simulation"></span><h2>Endogen simulation<a class="headerlink" href="#module-endogen.endogen" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="endogen.endogen.EndogenousSystem">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">endogen.endogen.</span></span><span class="sig-name descname"><span class="pre">EndogenousSystem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_data:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">~os.PathLike</span> <span class="pre">|</span> <span class="pre">~pandas.core.frame.DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_var:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_var:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsim:</span> <span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end:</span> <span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vars:</span> <span class="pre">~typing.Sequence[str]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start:</span> <span class="pre">int</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_past_n:</span> <span class="pre">int</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/endogen/endogen.html#EndogenousSystem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.endogen.EndogenousSystem" title="Link to this definition">#</a></dt>
+<dd><p>An endogenous panel-data system of models/nodes with associated methods for correct scheduling of model forecasts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_data</strong> (<em>str</em><em> or </em><em>pandas.DataFrame</em>) – Panel data (or path to data) that includes all variables required by the forecasting system (and possibly fitting of models).</p></li>
+<li><p><strong>time_var</strong> (<em>str</em>) – The variable name indicating time in input_data.</p></li>
+<li><p><strong>unit_var</strong> (<em>str</em>) – The variable name indicating units in input_data.</p></li>
+<li><p><strong>nsim</strong> (<em>int</em>) – The number of independent simulations of the endogenous system.</p></li>
+<li><p><strong>start</strong> (<em>int</em>) – The number on the same scale as time_var when forecasting should start.</p></li>
+<li><p><strong>end</strong> (<em>int</em>) – The number on the same scale as time_var when forecasting should end.</p></li>
+<li><p><strong>vars</strong> (<em>Optional</em><em>[</em><em>Sequence</em><em>[</em><em>str</em><em>]</em><em>]</em>) – A subset of variables in input_data. Defaults to all variables in input_data.</p></li>
+<li><p><strong>include_past_n</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – How much of the past to include when fitting statistical models.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="endogen.endogen.EndogenousSystem.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/endogen/endogen.html#EndogenousSystem.plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.endogen.EndogenousSystem.plot" title="Link to this definition">#</a></dt>
+<dd><p>Plot method for historical and forecasted data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>var</strong> (<em>str</em>) – Name of the variable you want to plot</p></li>
+<li><p><strong>unit</strong> (<em>Optional</em><em>[</em><em>Sequence</em><em>[</em><em>int</em><em>]</em><em>]</em>) – List of subset of units you want to plot in facets. Plot will otherwise show global statistics.</p></li>
+<li><p><strong>start</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – Alternative start time. Plot will otherwise start as early as possible with the data given.</p></li>
+<li><p><strong>args</strong> – Other arguments to pass to seaborn.relplot</p></li>
+<li><p><strong>kwargs</strong> (<em>key</em><em>, </em><em>value pairings</em>) – Dictionary of keyword arguments to pass to seaborn.relplot</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An object managing one or more subplots that correspond to conditional data subsets with convenient methods for batch-setting of axes attributes.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>seaborn.FacetGrid</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="endogen.endogen.ModelController">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">endogen.endogen.</span></span><span class="sig-name descname"><span class="pre">ModelController</span></span><a class="reference internal" href="_modules/endogen/endogen.html#ModelController"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.endogen.ModelController" title="Link to this definition">#</a></dt>
+<dd><p>A controller for organizing and scheduling models.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="endogen.endogen.ModelController.add_models">
+<span class="sig-name descname"><span class="pre">add_models</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">models</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#endogen.config.InputModel" title="endogen.config.InputModel"><span class="pre">InputModel</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#endogen.config.InputModel" title="endogen.config.InputModel"><span class="pre">InputModel</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/endogen/endogen.html#ModelController.add_models"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.endogen.ModelController.add_models" title="Link to this definition">#</a></dt>
+<dd><p>Adds a model to the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>model</strong> (<em>VariableModel</em>) – Any model type supported by the VariableModel class.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="endogen.endogen.ModelSchedule">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">endogen.endogen.</span></span><span class="sig-name descname"><span class="pre">ModelSchedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delta_t</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/endogen/endogen.html#ModelSchedule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.endogen.ModelSchedule" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class" id="module-endogen.variables">
+<dt class="sig sig-object py" id="endogen.variables.Variable">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">endogen.variables.</span></span><span class="sig-name descname"><span class="pre">Variable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/endogen/variables.html#Variable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.variables.Variable" title="Link to this definition">#</a></dt>
+<dd><p>A variable class that holds the information necessary to represent a variable model or transformation in the simulation system.
+Not used for statistical models (see <cite>config.InputModel</cite>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output_var</strong> (<em>str</em>) – Name of the output variable</p></li>
+<li><p><strong>subset</strong> (<em>int</em>) – Endogenous simulation requires that all variables are fully specified in a circular fashion.
+At the same time, there cannot be any circular definitions in the transformation step, nor in the forecast step.
+If the variable is subset == 0, it is estimated/calculated in the transformation step, if it is 1, it is in the forecast step.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – This is just the base class that other Variable classes inherits. This class is not meant to be instantiated.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="endogen.variables.Variable.calc">
+<span class="sig-name descname"><span class="pre">calc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dataset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataArray</span></span></span><a class="reference internal" href="_modules/endogen/variables.html#Variable.calc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.variables.Variable.calc" title="Link to this definition">#</a></dt>
+<dd><p>A function that takes input data that includes input-variables required to calculate the output_var.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>xd</strong> (<em>xarray.Dataset</em>) – A xarray.Dataset, often <cite>EndogenousSystem._xa</cite> (simulation data), or the <cite>EndogenousSystem._past</cite>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns a DataArray with the output_var, properly indexed.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>xarray.DataArray</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – This is just the base class that other Variable classes inherits. This class is not meant to be instantiated.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="endogen.variables.Variable.node">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">node</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#endogen.variables.Variable.node" title="Link to this definition">#</a></dt>
+<dd><p>A node representation that interface well with NetworkX graphs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple where the first element is the output variable name (“node”), and the second element is a dictionary of node data.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple[str, Mapping[str, Any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="endogen.variables.VariableDifference">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">endogen.variables.</span></span><span class="sig-name descname"><span class="pre">VariableDifference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'growth'</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/endogen/variables.html#VariableDifference"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.variables.VariableDifference" title="Link to this definition">#</a></dt>
+<dd><p>A Variable class for the 1-year growth transformation function. There is room for generalization here.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output_var</strong> (<em>str</em>) – Name of the output variable</p></li>
+<li><p><strong>subset</strong> (<em>int</em>) – Endogenous simulation requires that all variables are fully specified in a circular fashion.
+At the same time, there cannot be any circular definitions in the transformation step, nor in the forecast step.
+If the variable is subset == 0, it is estimated/calculated in the transformation step, if it is 1, it is in the forecast step.</p></li>
+<li><p><strong>input_var</strong> (<em>str</em>) – Name of the input variable</p></li>
+<li><p><strong>type</strong> (<em>Literal</em><em>[</em><em>&quot;growth</em><em>]</em>) – Currently only supports “growth” as case. Any temporal difference function could in principle be supported here.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="endogen.variables.VariableDifference.calc">
+<span class="sig-name descname"><span class="pre">calc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dataset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataArray</span></span></span><a class="reference internal" href="_modules/endogen/variables.html#VariableDifference.calc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.variables.VariableDifference.calc" title="Link to this definition">#</a></dt>
+<dd><p>A growth function that takes a single input variable and outputs the growth from t-1 to t. This calculates the exact growth, and
+not growth based on log difference. Uses xarray internal functions.</p>
+<p>Warning! Divide by zero is a possibility here.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>xd</strong> (<em>xarray.Dataset</em>) – A xarray.Dataset, often <cite>EndogenousSystem._xa</cite> (simulation data), or the <cite>EndogenousSystem._past</cite>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns a DataArray with the output_var, properly indexed.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>xarray.DataArray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="endogen.variables.VariableLag">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">endogen.variables.</span></span><span class="sig-name descname"><span class="pre">VariableLag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_lag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/endogen/variables.html#VariableLag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.variables.VariableLag" title="Link to this definition">#</a></dt>
+<dd><p>A Variable class for lagged variables (temporal offset). Uses <cite>xarray.DataArray.shift</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output_var</strong> (<em>str</em>) – Name of the output variable</p></li>
+<li><p><strong>subset</strong> (<em>int</em>) – Endogenous simulation requires that all variables are fully specified in a circular fashion.
+At the same time, there cannot be any circular definitions in the transformation step, nor in the forecast step.
+If the variable is subset == 0, it is estimated/calculated in the transformation step, if it is 1, it is in the forecast step.</p></li>
+<li><p><strong>input_var</strong> (<em>str</em>) – Name of the input variable</p></li>
+<li><p><strong>num_lag</strong> (<em>int</em>) – How many time-units to offset. E.g., 1 would lag a time-series 1 time-unit compared to the input_var.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="endogen.variables.VariableLag.calc">
+<span class="sig-name descname"><span class="pre">calc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dataset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataArray</span></span></span><a class="reference internal" href="_modules/endogen/variables.html#VariableLag.calc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.variables.VariableLag.calc" title="Link to this definition">#</a></dt>
+<dd><p>Calculates the lagged output variable given a xarray.Dataset that includes the input variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>xd</strong> (<em>xarray.Dataset</em>) – A xarray.Dataset, often <cite>EndogenousSystem._xa</cite> (simulation data), or the <cite>EndogenousSystem._past</cite>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns a DataArray with the output_var, properly indexed.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>xarray.DataArray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="endogen.variables.VariableRolling">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">endogen.variables.</span></span><span class="sig-name descname"><span class="pre">VariableRolling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fun</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'mean'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'sum'</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'normal'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'span'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'com'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'halflife'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'alpha'</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/endogen/variables.html#VariableRolling"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.variables.VariableRolling" title="Link to this definition">#</a></dt>
+<dd><p>A Variable class for rolling time-series functions. Rolling means and sums, as well as exponentially weighted moving windows are supported.
+See <cite>xarray.Dataset.rolling</cite> and <cite>xarray.Dataset.rolling_exp</cite> for details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output_var</strong> (<em>str</em>) – Name of the output variable</p></li>
+<li><p><strong>subset</strong> (<em>int</em>) – Endogenous simulation requires that all variables are fully specified in a circular fashion.
+At the same time, there cannot be any circular definitions in the transformation step, nor in the forecast step.
+If the variable is subset == 0, it is estimated/calculated in the transformation step, if it is 1, it is in the forecast step.</p></li>
+<li><p><strong>input_var</strong> (<em>str</em>) – Name of the input variable</p></li>
+<li><p><strong>window</strong> (<em>int</em>) – The window size in time-units.</p></li>
+<li><p><strong>fun</strong> (<em>Literal</em><em>[</em><em>&quot;mean&quot;</em><em>, </em><em>&quot;sum</em><em>]</em>) – The aggregation function (rolling mean or rolling sum).</p></li>
+<li><p><strong>window_type</strong> (<em>Literal</em><em>[</em><em>&quot;normal&quot;</em><em>, </em><em>&quot;span&quot;</em><em>, </em><em>&quot;com&quot;</em><em>, </em><em>&quot;halflife&quot;</em><em>, </em><em>&quot;alpha&quot;</em><em>]</em>) – “normal” is equally weighted. See <cite>pandas.DataFrame.ewm</cite> for details on the rest.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="endogen.variables.VariableRolling.calc">
+<span class="sig-name descname"><span class="pre">calc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dataset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataArray</span></span></span><a class="reference internal" href="_modules/endogen/variables.html#VariableRolling.calc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.variables.VariableRolling.calc" title="Link to this definition">#</a></dt>
+<dd><p>Calculates the temporally rolling transformations given an xarray.Dataset that includes the input_var. Uses xarray internal functions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>xd</strong> (<em>xarray.Dataset</em>) – A xarray.Dataset, often <cite>EndogenousSystem._xa</cite> (simulation data), or the <cite>EndogenousSystem._past</cite>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns a DataArray with the output_var, properly indexed.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>xarray.DataArray</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>NotImplementedError</strong> – <cite>fun</cite> must be “mean” or “sum”. Any other aggregation function is not supported.</p></li>
+<li><p><strong>NotImplementedError</strong> – <cite>window_type</cite> must be “normal”, “span”, “com”, “halflife”, or “alpha”. Other types are not supported.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="endogen.variables.VariableSingleEdge">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">endogen.variables.</span></span><span class="sig-name descname"><span class="pre">VariableSingleEdge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/endogen/variables.html#VariableSingleEdge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.variables.VariableSingleEdge" title="Link to this definition">#</a></dt>
+<dd><p>A variable class that holds the information necessary to represent a variable model or transformation in the simulation system.
+Not used for statistical models (see <cite>config.InputModel</cite>). Helper class that I will probably regret.
+Used for all Variables that only take one input variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output_var</strong> (<em>str</em>) – Name of the output variable</p></li>
+<li><p><strong>subset</strong> (<em>int</em>) – Endogenous simulation requires that all variables are fully specified in a circular fashion.
+At the same time, there cannot be any circular definitions in the transformation step, nor in the forecast step.
+If the variable is subset == 0, it is estimated/calculated in the transformation step, if it is 1, it is in the forecast step.</p></li>
+<li><p><strong>input_var</strong> (<em>str</em>) – Name of the input variable</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="endogen.variables.VariableSingleEdge.edges">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">edges</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#endogen.variables.VariableSingleEdge.edges" title="Link to this definition">#</a></dt>
+<dd><p>An edge representation (list of tuples) that interface well with NetworkX graphs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A graph edge describing the link between the input_var and the output_var.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>List[Tuple[str, str]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="endogen.variables.VariableTransform">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">endogen.variables.</span></span><span class="sig-name descname"><span class="pre">VariableTransform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_var:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset:</span> <span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formula:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_vars:</span> <span class="pre">~typing.List[str]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/endogen/variables.html#VariableTransform"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.variables.VariableTransform" title="Link to this definition">#</a></dt>
+<dd><p>A class holding the information necessary to do a mathematical transformation of input-variables to calculate a new output variable.
+This class only supports transformations that are static in time, e.g., log-transformations, multiplications, etc. It is using <cite>formulae.design_matrices()</cite>
+to do the transformation.</p>
+<p>Caution! The Wilkinson formula language have some gotcha’s. For instance, “var1 + var2” will give you a matrix with two columns, not a matrix
+with one column being the sum of var1 and var2. To achieve the latter, you need to write “I(var1 + var2)”. Any numpy (“np.”) and scipy (“scipy.”)
+tranformative function is in principle also supported. E.g., “np.sum(var1, var2)” would achieve the same.
+It is also important to note the difference between “var1:var2” and “var1*var2”.</p>
+<p>Warning! Currently, there is nothing stopping you making a design matrix with multiple columns. This is not supported.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output_var</strong> (<em>str</em>) – Name of the output variable</p></li>
+<li><p><strong>subset</strong> (<em>int</em>) – Endogenous simulation requires that all variables are fully specified in a circular fashion.
+At the same time, there cannot be any circular definitions in the transformation step, nor in the forecast step.
+If the variable is subset == 0, it is estimated/calculated in the transformation step, if it is 1, it is in the forecast step.</p></li>
+<li><p><strong>formula</strong> (<em>str</em>) – A Wilkinson formula supported by <cite>formulae</cite>. See <a class="reference external" href="https://bambinos.github.io/formulae/notebooks/getting_started.html#User-guide">https://bambinos.github.io/formulae/notebooks/getting_started.html#User-guide</a>.</p></li>
+<li><p><strong>input_vars</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – List with names of the input variables.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="endogen.variables.VariableTransform.calc">
+<span class="sig-name descname"><span class="pre">calc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dataset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataArray</span></span></span><a class="reference internal" href="_modules/endogen/variables.html#VariableTransform.calc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.variables.VariableTransform.calc" title="Link to this definition">#</a></dt>
+<dd><p>A variable transformation function that takes input data that includes input-variables required to calculate the output_var.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>xd</strong> (<em>xarray.Dataset</em>) – A xarray.Dataset, often <cite>EndogenousSystem._xa</cite> (simulation data), or the <cite>EndogenousSystem._past</cite>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns a DataArray with the output_var, properly indexed.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>xarray.DataArray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="endogen.variables.VariableTransform.edges">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">edges</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#endogen.variables.VariableTransform.edges" title="Link to this definition">#</a></dt>
+<dd><p>The edges between input variables and the transformed output variable that interface well with NetworkX graphs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of graph edges describing the link between the input_var and the output_var.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>List[Tuple[str, str]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function" id="module-endogen.adapter_mlforecast">
+<dt class="sig sig-object py" id="endogen.adapter_mlforecast.forecast_mlforecast">
+<span class="sig-prename descclassname"><span class="pre">endogen.adapter_mlforecast.</span></span><span class="sig-name descname"><span class="pre">forecast_mlforecast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">MLForecast</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xdata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pnames</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#endogen.utilities.PanelUnits" title="endogen.utilities.PanelUnits"><span class="pre">PanelUnits</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_vars</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">levels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">list[float]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/endogen/adapter_mlforecast.html#forecast_mlforecast"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.adapter_mlforecast.forecast_mlforecast" title="Link to this definition">#</a></dt>
+<dd><p>A prediction function adapter for MLForecast fitted with PredictionIntervals drawing predictions from the (approx./stepwise)
+full predictive distribution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>t</strong> (<em>int</em>) – Time index to forecast</p></li>
+<li><p><strong>s</strong> (<em>int</em>) – Simulation index to forecast</p></li>
+<li><p><strong>model</strong> (<em>MLForecast</em>) – The MLForecast object</p></li>
+<li><p><strong>xdata</strong> (<em>xarray.Dataset</em>) – The input data used in forecasting</p></li>
+<li><p><strong>pnames</strong> (<a class="reference internal" href="#endogen.utilities.PanelUnits" title="endogen.utilities.PanelUnits"><em>PanelUnits</em></a>) – The internal index naming convention used.</p></li>
+<li><p><strong>output_var</strong> (<em>str</em>) – The output variable</p></li>
+<li><p><strong>input_vars</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – The list of input variables</p></li>
+<li><p><strong>levels</strong> (<em>list</em><em>[</em><em>float</em><em>]</em>) – The list of prediction intervals that the MLForecast model has been fitted with.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A properly indexed pandas.DataFrame with a single draw from the full predictive distribution for all units at time t.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="endogen.adapter_mlforecast.percentile_hi_lo">
+<span class="sig-prename descclassname"><span class="pre">endogen.adapter_mlforecast.</span></span><span class="sig-name descname"><span class="pre">percentile_hi_lo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'lo'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'hi'</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/endogen/adapter_mlforecast.html#percentile_hi_lo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.adapter_mlforecast.percentile_hi_lo" title="Link to this definition">#</a></dt>
+<dd><p>Calculate lo/hi percentile from predictive interval</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>interval</strong> (<em>float</em>) – The predictive interval in percent.</p></li>
+<li><p><strong>type</strong> (<em>Literal</em><em>[</em><em>&quot;lo&quot;</em><em>, </em><em>&quot;hi&quot;</em><em>]</em>) – Whether to return the low or high percentile from the interval.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A percentile from 0 - 1.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="endogen.adapter_mlforecast.setup_mlforecast_bins">
+<span class="sig-prename descclassname"><span class="pre">endogen.adapter_mlforecast.</span></span><span class="sig-name descname"><span class="pre">setup_mlforecast_bins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">MLForecast</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">levels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">list[float]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/endogen/adapter_mlforecast.html#setup_mlforecast_bins"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.adapter_mlforecast.setup_mlforecast_bins" title="Link to this definition">#</a></dt>
+<dd><p>A helper function to rename columns from MLForecast models with PredictiveIntervals. These are named in terms of the prediction interval and
+a lo/hi indicator. This function converts this to percentiles and returns a dictionary for easy renaming in Pandas.</p>
+<p>The idea here is to create an equally binned histogram over the percentiles in a prediction distribution, finding the prediction at the middle of each bin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<em>MLForecast</em>) – A <cite>mlforecast.forecast.MLForecast</cite> model object</p></li>
+<li><p><strong>levels</strong> (<em>list</em><em>[</em><em>float</em><em>]</em>) – A list of prediction intervals. E.g., [50, 90] gives the 50% and 90% prediction interval</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple with a dictionary with the renaming scheme for use in Pandas and the list of percentiles.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple[dict[str, str], list[float]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-endogen.data_utilities">
+<span id="misc-utilities"></span><h2>Misc utilities<a class="headerlink" href="#module-endogen.data_utilities" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="endogen.data_utilities.compare_to_most_recent">
+<span class="sig-prename descclassname"><span class="pre">endogen.data_utilities.</span></span><span class="sig-name descname"><span class="pre">compare_to_most_recent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alternative_time_comparison</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/endogen/data_utilities.html#compare_to_most_recent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.data_utilities.compare_to_most_recent" title="Link to this definition">#</a></dt>
+<dd><p>Compares all temporal cross-sections with the most recent, and finds the superfluous and missing units.
+Superfluous units are units found in cross-sections that is not the most recent, but is not found in the most recent cross-section.
+Missing units are units that are found in the most recent cross-section, but not found in other cross-sections.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – A dataframe with panel data</p></li>
+<li><p><strong>time_var</strong> (<em>str</em>) – A time-index variable of integer type (e.g., year).</p></li>
+<li><p><strong>unit_var</strong> (<em>str</em>) – A unit-index variable of integer type (e.g., gwcode)</p></li>
+<li><p><strong>alternative_time_comparison</strong> (<em>int</em>) – An alternative comparison period to use instead of the most recent. Must be an integer that is found in the time_var column.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>_description_</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple[list[tuple[int, Set[int]]], list[tuple[int, Set[int]]]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="endogen.data_utilities.drop_missing_units">
+<span class="sig-prename descclassname"><span class="pre">endogen.data_utilities.</span></span><span class="sig-name descname"><span class="pre">drop_missing_units</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alternative_time_comparison</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/endogen/data_utilities.html#drop_missing_units"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.data_utilities.drop_missing_units" title="Link to this definition">#</a></dt>
+<dd><p>Drop missing units from the dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – A dataframe with panel data</p></li>
+<li><p><strong>time_var</strong> (<em>str</em>) – A time-index variable of integer type (e.g., year).</p></li>
+<li><p><strong>unit_var</strong> (<em>str</em>) – A unit-index variable of integer type (e.g., gwcode)</p></li>
+<li><p><strong>alternative_time_comparison</strong> (<em>int</em>) – An alternative comparison period to use instead of the most recent. Must be an integer that is found in the time_var column.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dataframe where years with missing units of observation compared to the latest time-period is dropped.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="endogen.data_utilities.drop_superfluous">
+<span class="sig-prename descclassname"><span class="pre">endogen.data_utilities.</span></span><span class="sig-name descname"><span class="pre">drop_superfluous</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alternative_time_comparison</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/endogen/data_utilities.html#drop_superfluous"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.data_utilities.drop_superfluous" title="Link to this definition">#</a></dt>
+<dd><p>Drop superfluous units from the dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – A dataframe with panel data</p></li>
+<li><p><strong>time_var</strong> (<em>str</em>) – A time-index variable of integer type (e.g., year).</p></li>
+<li><p><strong>unit_var</strong> (<em>str</em>) – A unit-index variable of integer type (e.g., gwcode)</p></li>
+<li><p><strong>alternative_time_comparison</strong> (<em>int</em>) – An alternative comparison period to use instead of the most recent. Must be an integer that is found in the time_var column.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dataframe where units of observation that is not in the lastest time-period is dropped.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="endogen.data_utilities.generate_comparison_report">
+<span class="sig-prename descclassname"><span class="pre">endogen.data_utilities.</span></span><span class="sig-name descname"><span class="pre">generate_comparison_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alternative_time_comparison</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/endogen/data_utilities.html#generate_comparison_report"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.data_utilities.generate_comparison_report" title="Link to this definition">#</a></dt>
+<dd><p>A report that is useful to understand how to build a complete and balanced dataset from a input panel data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – A dataframe with panel data</p></li>
+<li><p><strong>time_var</strong> (<em>str</em>) – A time-index variable of integer type (e.g., year).</p></li>
+<li><p><strong>unit_var</strong> (<em>str</em>) – A unit-index variable of integer type (e.g., gwcode)</p></li>
+<li><p><strong>alternative_time_comparison</strong> (<em>int</em>) – An alternative comparison period to use instead of the most recent. Must be an integer that is found in the time_var column.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dataframe with one observation per time-unit, indicating the superfluous and missing units across time.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="endogen.data_utilities.read_input_data">
+<span class="sig-prename descclassname"><span class="pre">endogen.data_utilities.</span></span><span class="sig-name descname"><span class="pre">read_input_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/endogen/data_utilities.html#read_input_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.data_utilities.read_input_data" title="Link to this definition">#</a></dt>
+<dd><p>Reads input data to be used in estimation of statistical models and as initial values for simulation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input_data</strong> (<em>str</em><em> | </em><em>os.PathLike</em><em> | </em><em>pd.DataFrame</em>) – Path to input data or a pandas.DataFrame object. Supports .csv and .parquet files.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>pandas.DataFrame</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>NotImplementedError</strong> – Currently only supports .csv and .parquet files.</p></li>
+<li><p><strong>ValueError</strong> – Input data must be pandas.DataFrame if not path to .csv or .parquet file.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class" id="module-endogen.utilities">
+<dt class="sig sig-object py" id="endogen.utilities.PanelUnits">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">endogen.utilities.</span></span><span class="sig-name descname"><span class="pre">PanelUnits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/endogen/utilities.html#PanelUnits"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.utilities.PanelUnits" title="Link to this definition">#</a></dt>
+<dd><p>Utility class for describing panel-unit names.</p>
+<p>The user might want to use different naming conventions than we do under-the-hood. Since we use nixtla for
+parts of our tasks, we use their naming conventions (“ds” for time and “unique_id” for units).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time_var</strong> (<em>str</em>) – The name of the time variable as given by the user</p></li>
+<li><p><strong>unit_var</strong> (<em>str</em>) – The name of the unit variable as given by the user</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="endogen.utilities.PanelUnits.external_index">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">external_index</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#endogen.utilities.PanelUnits.external_index" title="Link to this definition">#</a></dt>
+<dd><p>Return the index sequence. Useful to get a consistent use across code.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="endogen.utilities.PanelUnits.internal_index">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">internal_index</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#endogen.utilities.PanelUnits.internal_index" title="Link to this definition">#</a></dt>
+<dd><p>Return the index sequence. Useful to get a consistent use across code.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="endogen.utilities.PanelUnits.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inv</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/endogen/utilities.html#PanelUnits.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.utilities.PanelUnits.to_dict" title="Link to this definition">#</a></dt>
+<dd><p>Return a mapping of user-provided and internal ids</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>inv</strong> (<em>bool</em>) – Invert the mapping. {internal: user} instead of {user: internal}</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function" id="module-endogen.tools">
+<dt class="sig sig-object py" id="endogen.tools.flatten_recursive_generator">
+<span class="sig-prename descclassname"><span class="pre">endogen.tools.</span></span><span class="sig-name descname"><span class="pre">flatten_recursive_generator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lst</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/endogen/tools.html#flatten_recursive_generator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#endogen.tools.flatten_recursive_generator" title="Link to this definition">#</a></dt>
+<dd><p>Flatten a list using recursion.</p>
+</dd></dl>
+
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="useage.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Useage</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, PRIO
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">API</a><ul>
+<li><a class="reference internal" href="#module-endogen.config">Configuration</a><ul>
+<li><a class="reference internal" href="#endogen.config.Config"><code class="docutils literal notranslate"><span class="pre">Config</span></code></a></li>
+<li><a class="reference internal" href="#endogen.config.Differences"><code class="docutils literal notranslate"><span class="pre">Differences</span></code></a></li>
+<li><a class="reference internal" href="#endogen.config.GlobalSimConfig"><code class="docutils literal notranslate"><span class="pre">GlobalSimConfig</span></code></a></li>
+<li><a class="reference internal" href="#endogen.config.InputModel"><code class="docutils literal notranslate"><span class="pre">InputModel</span></code></a><ul>
+<li><a class="reference internal" href="#endogen.config.InputModel.edges"><code class="docutils literal notranslate"><span class="pre">InputModel.edges</span></code></a></li>
+<li><a class="reference internal" href="#endogen.config.InputModel.node"><code class="docutils literal notranslate"><span class="pre">InputModel.node</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#endogen.config.Lags"><code class="docutils literal notranslate"><span class="pre">Lags</span></code></a></li>
+<li><a class="reference internal" href="#endogen.config.Rolling"><code class="docutils literal notranslate"><span class="pre">Rolling</span></code></a></li>
+<li><a class="reference internal" href="#endogen.config.Transform"><code class="docutils literal notranslate"><span class="pre">Transform</span></code></a><ul>
+<li><a class="reference internal" href="#endogen.config.Transform.get_variables"><code class="docutils literal notranslate"><span class="pre">Transform.get_variables()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-endogen.endogen">Endogen simulation</a><ul>
+<li><a class="reference internal" href="#endogen.endogen.EndogenousSystem"><code class="docutils literal notranslate"><span class="pre">EndogenousSystem</span></code></a><ul>
+<li><a class="reference internal" href="#endogen.endogen.EndogenousSystem.plot"><code class="docutils literal notranslate"><span class="pre">EndogenousSystem.plot()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#endogen.endogen.ModelController"><code class="docutils literal notranslate"><span class="pre">ModelController</span></code></a><ul>
+<li><a class="reference internal" href="#endogen.endogen.ModelController.add_models"><code class="docutils literal notranslate"><span class="pre">ModelController.add_models()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#endogen.endogen.ModelSchedule"><code class="docutils literal notranslate"><span class="pre">ModelSchedule</span></code></a></li>
+<li><a class="reference internal" href="#endogen.variables.Variable"><code class="docutils literal notranslate"><span class="pre">Variable</span></code></a><ul>
+<li><a class="reference internal" href="#endogen.variables.Variable.calc"><code class="docutils literal notranslate"><span class="pre">Variable.calc()</span></code></a></li>
+<li><a class="reference internal" href="#endogen.variables.Variable.node"><code class="docutils literal notranslate"><span class="pre">Variable.node</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#endogen.variables.VariableDifference"><code class="docutils literal notranslate"><span class="pre">VariableDifference</span></code></a><ul>
+<li><a class="reference internal" href="#endogen.variables.VariableDifference.calc"><code class="docutils literal notranslate"><span class="pre">VariableDifference.calc()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#endogen.variables.VariableLag"><code class="docutils literal notranslate"><span class="pre">VariableLag</span></code></a><ul>
+<li><a class="reference internal" href="#endogen.variables.VariableLag.calc"><code class="docutils literal notranslate"><span class="pre">VariableLag.calc()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#endogen.variables.VariableRolling"><code class="docutils literal notranslate"><span class="pre">VariableRolling</span></code></a><ul>
+<li><a class="reference internal" href="#endogen.variables.VariableRolling.calc"><code class="docutils literal notranslate"><span class="pre">VariableRolling.calc()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#endogen.variables.VariableSingleEdge"><code class="docutils literal notranslate"><span class="pre">VariableSingleEdge</span></code></a><ul>
+<li><a class="reference internal" href="#endogen.variables.VariableSingleEdge.edges"><code class="docutils literal notranslate"><span class="pre">VariableSingleEdge.edges</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#endogen.variables.VariableTransform"><code class="docutils literal notranslate"><span class="pre">VariableTransform</span></code></a><ul>
+<li><a class="reference internal" href="#endogen.variables.VariableTransform.calc"><code class="docutils literal notranslate"><span class="pre">VariableTransform.calc()</span></code></a></li>
+<li><a class="reference internal" href="#endogen.variables.VariableTransform.edges"><code class="docutils literal notranslate"><span class="pre">VariableTransform.edges</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#endogen.adapter_mlforecast.forecast_mlforecast"><code class="docutils literal notranslate"><span class="pre">forecast_mlforecast()</span></code></a></li>
+<li><a class="reference internal" href="#endogen.adapter_mlforecast.percentile_hi_lo"><code class="docutils literal notranslate"><span class="pre">percentile_hi_lo()</span></code></a></li>
+<li><a class="reference internal" href="#endogen.adapter_mlforecast.setup_mlforecast_bins"><code class="docutils literal notranslate"><span class="pre">setup_mlforecast_bins()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-endogen.data_utilities">Misc utilities</a><ul>
+<li><a class="reference internal" href="#endogen.data_utilities.compare_to_most_recent"><code class="docutils literal notranslate"><span class="pre">compare_to_most_recent()</span></code></a></li>
+<li><a class="reference internal" href="#endogen.data_utilities.drop_missing_units"><code class="docutils literal notranslate"><span class="pre">drop_missing_units()</span></code></a></li>
+<li><a class="reference internal" href="#endogen.data_utilities.drop_superfluous"><code class="docutils literal notranslate"><span class="pre">drop_superfluous()</span></code></a></li>
+<li><a class="reference internal" href="#endogen.data_utilities.generate_comparison_report"><code class="docutils literal notranslate"><span class="pre">generate_comparison_report()</span></code></a></li>
+<li><a class="reference internal" href="#endogen.data_utilities.read_input_data"><code class="docutils literal notranslate"><span class="pre">read_input_data()</span></code></a></li>
+<li><a class="reference internal" href="#endogen.utilities.PanelUnits"><code class="docutils literal notranslate"><span class="pre">PanelUnits</span></code></a><ul>
+<li><a class="reference internal" href="#endogen.utilities.PanelUnits.external_index"><code class="docutils literal notranslate"><span class="pre">PanelUnits.external_index</span></code></a></li>
+<li><a class="reference internal" href="#endogen.utilities.PanelUnits.internal_index"><code class="docutils literal notranslate"><span class="pre">PanelUnits.internal_index</span></code></a></li>
+<li><a class="reference internal" href="#endogen.utilities.PanelUnits.to_dict"><code class="docutils literal notranslate"><span class="pre">PanelUnits.to_dict()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#endogen.tools.flatten_recursive_generator"><code class="docutils literal notranslate"><span class="pre">flatten_recursive_generator()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=6ca3c713"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="_static/tabs.js?v=3ee01567"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=5d53a5da"></script>
+    </body>
+</html>

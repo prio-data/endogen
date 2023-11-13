@@ -1,0 +1,601 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>polimpact.config - ENDOGEN 0.01 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: #00718f;
+  --color-brand-content: #00718f;
+  --color-background-secondary: #fafafa;
+  --color-problematic: #c41230;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #00718f;
+  --color-brand-content: #00718f;
+  --color-problematic: #e87722;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #00718f;
+  --color-brand-content: #00718f;
+  --color-problematic: #e87722;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">ENDOGEN 0.01 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  
+  <span class="sidebar-brand-text">ENDOGEN 0.01 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../useage.html">Useage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <h1>Source code for polimpact.config</h1><div class="highlight"><pre>
+<span></span><span class="c1"># from pydantic.dataclasses import dataclass, Field</span>
+<span class="c1"># from pydantic import validator</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Literal</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">Tuple</span>
+
+<span class="kn">from</span> <span class="nn">.variables</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">VariableTransform</span><span class="p">,</span>
+    <span class="n">VariableDifference</span><span class="p">,</span>
+    <span class="n">VariableRolling</span><span class="p">,</span>
+    <span class="n">VariableLag</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="Transform">
+<a class="viewcode-back" href="../../api.html#polimpact.config.Transform">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">eq</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Transform</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A schema for describing a variable transform and a factory for `variables.VariableTransform` variables.</span>
+<span class="sd">    Can be used separately, or in conjunction with .yaml files and `hydra.initialize`, `hydra.compose`, and `hydra.utils.instantiate`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    output_var : str</span>
+<span class="sd">        Name of the output variable</span>
+<span class="sd">    input_vars : list[str]</span>
+<span class="sd">        List of input variables needed to create the output variable</span>
+<span class="sd">    formula : str</span>
+<span class="sd">        A Wilkinson formula supported by `formulae`. See https://bambinos.github.io/formulae/notebooks/getting_started.html#User-guide.</span>
+<span class="sd">    after_forecast : bool</span>
+<span class="sd">        Endogenous simulation requires that all variables are fully specified in a circular fashion.</span>
+<span class="sd">        At the same time, there cannot be any circular definitions in the transformation step, nor in the forecast step.</span>
+<span class="sd">        If after_forecast is True, the variable is estimated/calculated in the forecast step.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">output_var</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">input_vars</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">formula</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">after_forecast</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+
+<div class="viewcode-block" id="Transform.get_variables">
+<a class="viewcode-back" href="../../api.html#polimpact.config.Transform.get_variables">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">VariableTransform</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Helper function to create a VariableTransform.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        VariableTransform</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">after_forecast</span><span class="p">:</span>
+            <span class="n">subset</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">subset</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="n">VariableTransform</span><span class="p">(</span>
+            <span class="n">output_var</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">output_var</span><span class="p">,</span>
+            <span class="n">input_vars</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">input_vars</span><span class="p">,</span>
+            <span class="n">formula</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">formula</span><span class="p">,</span>
+            <span class="n">subset</span><span class="o">=</span><span class="n">subset</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="Differences">
+<a class="viewcode-back" href="../../api.html#polimpact.config.Differences">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">eq</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Differences</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A schema for describing a growth variables and a factory for `variables.VariableDifference` variables.</span>
+<span class="sd">    Can be used separately, or in conjunction with .yaml files and `hydra.initialize`, `hydra.compose`, and `hydra.utils.instantiate`.</span>
+
+<span class="sd">    Will return output variables named the same as the input variables, only with &quot;_gr&quot; suffixed.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    type : Literal[&quot;growth]</span>
+<span class="sd">        Growth is currently the only difference function available. Note that dividing with zero is a possibility.</span>
+<span class="sd">    input_vars : list[str]</span>
+<span class="sd">        List of input variables to transform.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="nb">type</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;growth&quot;</span><span class="p">]</span>
+    <span class="n">input_vars</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">get_output_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_var</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">match</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">:</span>
+            <span class="k">case</span> <span class="s2">&quot;growth&quot;</span><span class="p">:</span>
+                <span class="n">suffix</span> <span class="o">=</span> <span class="s2">&quot;_gr&quot;</span>
+            <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown Differences.type: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">input_var</span><span class="si">}{</span><span class="n">suffix</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">def</span> <span class="nf">get_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">VariableDifference</span><span class="p">]:</span>
+        <span class="p">[</span>
+            <span class="n">VariableDifference</span><span class="p">(</span>
+                <span class="n">output_var</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_output_name</span><span class="p">(</span><span class="n">input_var</span><span class="p">),</span>
+                <span class="n">input_var</span><span class="o">=</span><span class="n">input_var</span><span class="p">,</span>
+                <span class="nb">type</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">,</span>
+                <span class="n">subset</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">input_var</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_vars</span>
+        <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="Rolling">
+<a class="viewcode-back" href="../../api.html#polimpact.config.Rolling">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">eq</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Rolling</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A schema for describing variables with &quot;rolling&quot; transformations and a factory for `variables.VariableRolling` variables.</span>
+<span class="sd">    Can be used separately, or in conjunction with .yaml files and `hydra.initialize`, `hydra.compose`, and `hydra.utils.instantiate`.</span>
+
+<span class="sd">    Will return output variables named the same as the input variables, only with a suffix according to this scheme:</span>
+
+<span class="sd">    {input_var}_{window_type_suffix}{fun_suffix}{window} where:</span>
+
+<span class="sd">    =========== =======</span>
+<span class="sd">    window_type suffix</span>
+<span class="sd">    =========== =======</span>
+<span class="sd">    normal      \_r</span>
+<span class="sd">    span        \_rsp</span>
+<span class="sd">    com         \_rc</span>
+<span class="sd">    halflife    \_hl</span>
+<span class="sd">    alpha       \_ral</span>
+<span class="sd">    =========== =======</span>
+
+<span class="sd">    ==== ======</span>
+<span class="sd">    fun  suffix</span>
+<span class="sd">    ==== ======</span>
+<span class="sd">    mean m</span>
+<span class="sd">    sum  s</span>
+<span class="sd">    ==== ======</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    window : int</span>
+<span class="sd">        The window size in time-units.</span>
+<span class="sd">    funs : list[Literal[&quot;mean&quot;, &quot;sum]]</span>
+<span class="sd">        List of aggregation functions (rolling mean or rolling sum).</span>
+<span class="sd">    input_vars : list[str]</span>
+<span class="sd">        List of input variables to transform.</span>
+<span class="sd">    window_type : Literal[&quot;normal&quot;, &quot;span&quot;, &quot;com&quot;, &quot;halflife&quot;, &quot;alpha&quot;]</span>
+<span class="sd">        &quot;normal&quot; is equally weighted. See `pandas.DataFrame.ewm` for details on the rest.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">window</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">funs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;sum&quot;</span><span class="p">]]</span>
+    <span class="n">input_vars</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">window_type</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;normal&quot;</span><span class="p">,</span> <span class="s2">&quot;span&quot;</span><span class="p">,</span> <span class="s2">&quot;com&quot;</span><span class="p">,</span> <span class="s2">&quot;halflife&quot;</span><span class="p">,</span> <span class="s2">&quot;alpha&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;normal&quot;</span>
+
+    <span class="k">def</span> <span class="nf">get_output_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_var</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">fun</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">match</span> <span class="bp">self</span><span class="o">.</span><span class="n">window_type</span><span class="p">:</span>
+            <span class="k">case</span> <span class="s2">&quot;normal&quot;</span><span class="p">:</span>
+                <span class="n">suffix</span> <span class="o">=</span> <span class="s2">&quot;_r&quot;</span>
+            <span class="k">case</span> <span class="s2">&quot;span&quot;</span><span class="p">:</span>
+                <span class="n">suffix</span> <span class="o">=</span> <span class="s2">&quot;_rsp&quot;</span>
+            <span class="k">case</span> <span class="s2">&quot;com&quot;</span><span class="p">:</span>
+                <span class="n">suffix</span> <span class="o">=</span> <span class="s2">&quot;_rc&quot;</span>
+            <span class="k">case</span> <span class="s2">&quot;halflife&quot;</span><span class="p">:</span>
+                <span class="n">suffix</span> <span class="o">=</span> <span class="s2">&quot;_hl&quot;</span>
+            <span class="k">case</span> <span class="s2">&quot;alpha&quot;</span><span class="p">:</span>
+                <span class="n">suffix</span> <span class="o">=</span> <span class="s2">&quot;_ral&quot;</span>
+            <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown Rolling.window_type: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">window_type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">match</span> <span class="n">fun</span><span class="p">:</span>
+            <span class="k">case</span> <span class="s2">&quot;mean&quot;</span><span class="p">:</span>
+                <span class="n">suffix</span> <span class="o">=</span> <span class="n">suffix</span> <span class="o">+</span> <span class="s2">&quot;m&quot;</span>
+            <span class="k">case</span> <span class="s2">&quot;sum&quot;</span><span class="p">:</span>
+                <span class="n">suffix</span> <span class="o">=</span> <span class="n">suffix</span> <span class="o">+</span> <span class="s2">&quot;s&quot;</span>
+            <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown function: </span><span class="si">{</span><span class="n">fun</span><span class="si">}</span><span class="s2">, in Rolling.funs&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">input_var</span><span class="si">}{</span><span class="n">suffix</span><span class="si">}{</span><span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">def</span> <span class="nf">get_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">VariableRolling</span><span class="p">]:</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">input_var</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_vars</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">fun</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">funs</span><span class="p">:</span>
+                <span class="n">obj</span> <span class="o">=</span> <span class="n">VariableRolling</span><span class="p">(</span>
+                    <span class="n">output_var</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_output_name</span><span class="p">(</span><span class="n">input_var</span><span class="p">,</span> <span class="n">fun</span><span class="p">),</span>
+                    <span class="n">input_var</span><span class="o">=</span><span class="n">input_var</span><span class="p">,</span>
+                    <span class="n">window</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="p">,</span>
+                    <span class="n">fun</span><span class="o">=</span><span class="n">fun</span><span class="p">,</span>
+                    <span class="n">window_type</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">window_type</span><span class="p">,</span>
+                    <span class="n">subset</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">out</span></div>
+
+
+
+<div class="viewcode-block" id="Lags">
+<a class="viewcode-back" href="../../api.html#polimpact.config.Lags">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">eq</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Lags</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A schema for describing a lagged variables and a factory for `variables.VariableLag` variables.</span>
+<span class="sd">    Can be used separately, or in conjunction with .yaml files and `hydra.initialize`, `hydra.compose`, and `hydra.utils.instantiate`.</span>
+
+<span class="sd">    Will return output variables named the same as the input variables, only with &quot;_l{num_lag}&quot; suffixed.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    num_lag : int</span>
+<span class="sd">        How many time-units to offset. E.g., 1 would lag a time-series 1 time-unit compared to the input_var.</span>
+<span class="sd">    input_vars : list[str]</span>
+<span class="sd">        List of input variables to transform.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">num_lag</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">input_vars</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">get_output_names</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_var</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">input_var</span><span class="si">}</span><span class="s2">_l</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">num_lag</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">def</span> <span class="nf">get_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">VariableLag</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="n">VariableLag</span><span class="p">(</span>
+                <span class="n">output_var</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_output_names</span><span class="p">(</span><span class="n">input_var</span><span class="p">),</span>
+                <span class="n">input_var</span><span class="o">=</span><span class="n">input_var</span><span class="p">,</span>
+                <span class="n">num_lag</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">num_lag</span><span class="p">,</span>
+                <span class="n">subset</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">input_var</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_vars</span>
+        <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="InputModel">
+<a class="viewcode-back" href="../../api.html#polimpact.config.InputModel">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">eq</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">InputModel</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Configuration schema for statistical model of any variable, to be used in endogenous simulation.</span>
+<span class="sd">    Can be used separately, or in conjunction with .yaml files and `hydra.initialize`, `hydra.compose`, and `hydra.utils.instantiate`.</span>
+
+<span class="sd">    Endogenous simulation requires not only knowledge of the statistical model, but also of any other variable input in the model.</span>
+<span class="sd">    Some of these might be statistical models on their own (e.g., an `InputModel`), whilst other variables might be variable transforms</span>
+<span class="sd">    of various types (see the `variables` module). These models must be fully specified here. Note the naming conventions for variable transforms</span>
+<span class="sd">    in the various `config` schemas. E.g., for referencing a 1-year lagged variable as input_var, you can put the non-lagged variable &quot;var1&quot; in `InputModel.lags`,</span>
+<span class="sd">    and &quot;var1_l1&quot; in `InputModel.input_vars`. The `endogen.ModelController` will make sure variables are calculated in the correct sequence.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    stage : Literal[&quot;writing&quot;, &quot;evaluating&quot;, &quot;production&quot;]</span>
+<span class="sd">        Information on at which development-stage the InputModel can be said to live in. Can be useful in larger production settings.</span>
+<span class="sd">    output_var : str</span>
+<span class="sd">        The name of the output variable in question.</span>
+<span class="sd">    input_vars : list[str]</span>
+<span class="sd">        List of input variables the output variable needs in its model.</span>
+<span class="sd">    model : Any</span>
+<span class="sd">        Any supported statistical (or otherwise) model class that can produce numerical output (forecasts) based on input data.</span>
+<span class="sd">        Currently, that means any sklearn.base.BaseEstimator subclass or mlforecast.forecast.MLForecast</span>
+<span class="sd">    lags : list[Lags]</span>
+<span class="sd">        List of `config.Lags` necessary to build the `input_vars`.</span>
+<span class="sd">    rolling : list[Rolling]</span>
+<span class="sd">        List of `config.Rolling` necessary to build the `input_vars`.</span>
+<span class="sd">    differences : list[Differences]</span>
+<span class="sd">        List of `config.Differences` necessary to build the `input_vars`.</span>
+<span class="sd">    transforms : list[Transforms]</span>
+<span class="sd">        List of `config.Transforms` necessary to build the `input_vars`.</span>
+<span class="sd">    subset : int</span>
+<span class="sd">        Endogenous simulation requires that all variables are fully specified in a circular fashion.</span>
+<span class="sd">        At the same time, there cannot be any circular definitions in the transformation step, nor in the forecast step.</span>
+<span class="sd">        If the variable is subset == 0, it is estimated/calculated in the transformation step, if it is 1, it is in the forecast step.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">stage</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;writing&quot;</span><span class="p">,</span> <span class="s2">&quot;evaluating&quot;</span><span class="p">,</span> <span class="s2">&quot;production&quot;</span><span class="p">]</span>
+    <span class="n">output_var</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">input_vars</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">model</span><span class="p">:</span> <span class="n">Any</span>
+    <span class="n">lags</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Lags</span><span class="p">]]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
+    <span class="n">rolling</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Rolling</span><span class="p">]]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
+    <span class="n">differences</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Differences</span><span class="p">]]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
+    <span class="n">transforms</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Transform</span><span class="p">]]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
+    <span class="n">subset</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">node</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;A node representation that interface well with NetworkX graphs.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Tuple[str, Mapping[str, Any]]</span>
+<span class="sd">            A tuple where the first element is the output variable name (&quot;node&quot;), and the second element is a dictionary of node data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">output_var</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;subset&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">subset</span><span class="p">})</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">edges</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The edges between input variables and the output variable that interface well with NetworkX graphs.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        List[Tuple[str, str]]</span>
+<span class="sd">            A list of graph edges describing the links between the input_vars and the output_var.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[(</span><span class="n">input_var</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_var</span><span class="p">)</span> <span class="k">for</span> <span class="n">input_var</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_vars</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="GlobalSimConfig">
+<a class="viewcode-back" href="../../api.html#polimpact.config.GlobalSimConfig">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">GlobalSimConfig</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Configuration schema for global simulation options.</span>
+<span class="sd">    Can be used separately, or in conjunction with .yaml files and `hydra.initialize`, `hydra.compose`, and `hydra.utils.instantiate`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    input_data : str</span>
+<span class="sd">        Path to input data in either .csv or .parquet file format. Used both for training and as initial values in simulation.</span>
+<span class="sd">    time_var : str</span>
+<span class="sd">        Name of the variable in the input_data indicating the time dimension. The variable must be integer type.</span>
+<span class="sd">    unit_var : str</span>
+<span class="sd">        Name of the variable in the input_data indicating the unit/spatial dimension. The variable must be integer type.</span>
+<span class="sd">    nsim : int</span>
+<span class="sd">        Number of independent simulations to run.</span>
+<span class="sd">    end : int</span>
+<span class="sd">        The time-unit to end simulation. Since these are fully described endogenous simulations, they can go indefinitely.</span>
+<span class="sd">    include_past_n : int</span>
+<span class="sd">        How much of the past to include when fitting statistical models.</span>
+<span class="sd">    start : int</span>
+<span class="sd">        The time-unit to start simulation. Must be an integer value found in the time_var series in the input_data.</span>
+<span class="sd">    vars : list[str]</span>
+<span class="sd">        The subset of variables in the input_data to include.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">input_data</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">time_var</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">unit_var</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">nsim</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">end</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">include_past_n</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">start</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="nb">vars</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="Config">
+<a class="viewcode-back" href="../../api.html#polimpact.config.Config">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Global configuration schema for the endogenous simulation.</span>
+<span class="sd">    Can be used separately, or in conjunction with .yaml files and `hydra.initialize`, `hydra.compose`, and `hydra.utils.instantiate`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    global_config : GlobalSimConfig</span>
+<span class="sd">        Global simulation configuration options</span>
+<span class="sd">    variables : list[InputModel]</span>
+<span class="sd">        List of configuration schema for input models to include in endogenous simulation. Note restrictions on circularity, etc.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_variable_dict</span><span class="p">:</span> <span class="nb">dict</span>
+    <span class="n">global_config</span><span class="p">:</span> <span class="n">GlobalSimConfig</span>
+    <span class="n">variables</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">InputModel</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span></div>
+
+</pre></div>
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, PRIO
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=6ca3c713"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/tabs.js?v=3ee01567"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=36e5451b"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    </body>
+</html>
