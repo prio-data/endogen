@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "polimpact"
+name = "endogen"
 version = "0.1.0"
-description = "A long-term simulator of socio-political systems"
+description = "Dynamic endogenous simulation"
 authors = ["Jonas Vestby <jonves@prio.org>"]
 license = "MIT"
 readme = "readme.md"

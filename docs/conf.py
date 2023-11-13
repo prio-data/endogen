@@ -14,7 +14,7 @@ sys.path.insert(0, os.path.abspath(".."))
 project = "ENDOGEN"
 copyright = "2023, PRIO"
 author = "PRIO-DATA team"
-release = "0.01"
+release = "0.1.0"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
