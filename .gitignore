@@ -2,7 +2,6 @@ docs/_build/
 docs/_static/
 .cache/
 .vscode/
-**/__pycache__/
-__pycache__
+__pycache__/
 test/.pytest_cache/
 outputs/
