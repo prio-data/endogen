@@ -222,27 +222,29 @@ class EndogenousSystem:
             ]
 
         if self.start == None:
-            self.start = self.input_data[self.pnames.time_var].max()
+            self.start = self.input_data[self.pnames.time_var].max() + 1
+        
+        self._last_train = self.start - 1
 
         data_to_xarray = self.input_data[
-            self.input_data[self.pnames.time_var] <= self.start
+            self.input_data[self.pnames.time_var] < self.start
         ]
 
         report = generate_comparison_report(
             data_to_xarray,
             time_var=self.pnames.time_var,
             unit_var=self.pnames.unit_var,
-            alternative_time_comparison=self.start,
+            alternative_time_comparison=self._last_train,
         )
 
         self.missing_units = set().union(
-            *report.loc[slice(self.start - self.include_past_n, self.start)][
+            *report.loc[slice(self._last_train - self.include_past_n, self._last_train)][
                 "missing"
             ].tolist()
         )
         if len(self.missing_units) > 0:
             log.warning(
-                f"The following units were removed to attain a balanced dataset over {self.include_past_n + 1} years: {self.missing_units}."
+                f"The following units were removed to attain a balanced dataset over {self.include_past_n} years: {self.missing_units}."
             )
         data_to_xarray = data_to_xarray[
             ~data_to_xarray[self.pnames.unit_var].isin(self.missing_units)
@@ -252,14 +254,14 @@ class EndogenousSystem:
             data_to_xarray,
             time_var=self.pnames.time_var,
             unit_var=self.pnames.unit_var,
-            alternative_time_comparison=self.start,
+            alternative_time_comparison=self._last_train,
         )
 
         data_to_xarray = drop_missing_units(
             data_to_xarray,
             time_var=self.pnames.time_var,
             unit_var=self.pnames.unit_var,
-            alternative_time_comparison=self.start,
+            alternative_time_comparison=self._last_train,
         )
 
         data_to_xarray = data_to_xarray.rename(columns=self.pnames.to_dict()).set_index(
@@ -268,14 +270,12 @@ class EndogenousSystem:
 
         self._past = data_to_xarray[self.vars].dropna().to_xarray()
         self._past = self._past.sel(
-            ds=slice(self.start - self.include_past_n, self.start)
+            ds=slice(self._last_train - self.include_past_n, self._last_train)
         )
         del data_to_xarray
         # Initialize the model-controller
         self.models = ModelController()
 
-        # self.first_observation = self._past.coords["ds"].values[0]
-        # self.current_time = self.start
 
     @classmethod
     def _make_container(
@@ -310,7 +310,7 @@ class EndogenousSystem:
         self.prepare_data()
 
         time_index = pd.Index(
-            range(self.start - self.include_past_n, self.end), name="ds"
+            range(self._last_train - self.include_past_n, self.end), name="ds"
         )
         unit_index, _ = self._past.indexes.values()
 
@@ -381,7 +381,7 @@ class EndogenousSystem:
         t0, t1 = self.models._model_schedule
         for t in range(self.start, self.end):
             ds_index = (self._xa.ds.values == t).nonzero()[0][0]
-            for schedules in [t1, t0]:
+            for schedules in [t0, t1]:
                 for node_schedule in schedules.schedule:
                     for node in node_schedule:
                         model = self.models._graph.nodes[node]["model"]
