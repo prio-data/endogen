@@ -58,6 +58,7 @@ Requirements: A recently updated Linux or OS X operating system (tested with Ubu
 
 ``` console
 $ mamba install --channel=conda-forge --name=base conda-lock
+$ mamba update conda-lock
 ```
 
 3. Install [git](https://git-scm.com/downloads).
@@ -75,6 +76,8 @@ $ cd endogen
 $ conda-lock install -n endogen_env  --mamba
 $ mamba activate endogen_env
 ```
+
+If your system is not linux-64 or osx-arm64 (M1,M2,M3, etc.), you will have to build conda-lock.yml with another platform before running `conda-lock install`.
 
 6. Run poetry to add additional python package requirements.
 
