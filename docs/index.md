@@ -88,7 +88,7 @@ s.plot("rgdp", unit = 475)
 
 ## Installation
 
-Requirements: A recently updated Linux or OS X operating system (tested with Ubuntu 20.04), or Windows with [WSL](https://learn.microsoft.com/en-us/windows/wsl/install).
+Requirements: A recently updated Linux or OS X operating system (tested with Ubuntu 20.04), Windows with [WSL](https://learn.microsoft.com/en-us/windows/wsl/install), or in Windows 10/11. As a caution, it seems simulation speed is much slower on native Windows than on Unix systems, and even using WSL is faster. Certain future features might not be supported using Windows (e.g., we might be using JAX for certain model support, and it does not support running on GPU in Windows).
 
 1. Install [mamba](https://github.com/conda-forge/miniforge#mambaforge).
 
@@ -135,6 +135,10 @@ $ sudo apt-get install graphviz
 ```console
 $ brew install graphviz
 ```
+````
+
+````{tab} Windows 10+
+Install [here](https://graphviz.org/download/)
 ````
 
 ## Contents
