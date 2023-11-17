@@ -115,9 +115,7 @@ $ conda-lock install -n endogen_env  --mamba
 $ mamba activate endogen_env
 ```
 
-If your system is not linux-64 or osx-arm64 (M1,M2,M3, etc.), you will have to build conda-lock.yml with another platform before running `conda-lock install`.
-
-6. Run poetry to add additional python package requirements.
+1. Run poetry to add additional python package requirements.
 
 ```console
 (endogen_env) $ poetry install
