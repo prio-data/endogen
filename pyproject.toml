@@ -29,6 +29,7 @@ numbagg = "^0.6.0"
 networkx = "^3.2.1"
 graphviz = "^0.20.1"
 pyarrow = "^14.0.1"
+xarray = "^2023.10.1"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.4.2"
