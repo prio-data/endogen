@@ -359,6 +359,8 @@ class EndogenousSystem:
 
     def fit_models(self):
         for model in self.models.models:
+            if isinstance(model.model, str):
+                pass
             if isinstance(model.model, BaseEstimator):
                 df = self._past.to_dataframe()
                 y, X = df[model.output_var], df[model.input_vars]
@@ -422,6 +424,15 @@ class EndogenousSystem:
                                         input_vars,
                                         levels,
                                     )
+                            case str():
+                                for s in range(self.nsim):
+                                    df = self._xa[input_vars].to_dataframe().loc[t,:,s]
+                                    ind = df.index
+                                    res = design_matrices(f'0 + {model}', df, na_action = "pass").common.as_dataframe()
+                                    varname = res.columns[0]
+                                    self._xa[node][
+                                        ds_index, :, s
+                                    ] = res.rename(columns={varname: node}).set_index(ind)[node].to_xarray()
                             case _:
                                 raise NotImplementedError(
                                     f"Model of type {type(model)} is not implemented."
