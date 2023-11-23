@@ -1,4 +1,4 @@
-from .config import InputModel, Differences, Lags, Rolling, Transform
+from .config import InputModel, ExogenModel, Differences, Lags, Rolling, Transform
 from .variables import (
     Variable,
     VariableLag,
@@ -56,7 +56,7 @@ class ModelController:
         self._models = []
         self._graph = nx.DiGraph()
 
-    def add_models(self, models: InputModel | Sequence[InputModel]) -> None:
+    def add_models(self, models: InputModel | ExogenModel | Sequence[InputModel|ExogenModel]) -> None:
         """Adds a model to the system.
 
         Parameters
@@ -64,7 +64,7 @@ class ModelController:
         model : VariableModel
             Any model type supported by the VariableModel class.
         """
-        if isinstance(models, InputModel):
+        if not isinstance(models, Sequence):
             models = [models]
 
         output_vars = [m.output_var for m in self._models]
@@ -81,7 +81,7 @@ class ModelController:
         self._models_to_graph()
 
     @property
-    def models(self) -> Sequence[InputModel]:
+    def models(self) -> Sequence[InputModel|ExogenModel]:
         return self._models
 
     def plot(self, path: str = None) -> None:
@@ -105,14 +105,17 @@ class ModelController:
 
         variable_types: Sequence[str] = ["lags", "differences", "rolling", "transforms"]
 
+        input_models = [m for m in self.models if isinstance(m, InputModel)]
+        exogen_models = [m for m in self.models if isinstance(m, ExogenModel)]
+
         variables = []
         for var_type in variable_types:
-            for model in self.models:
+            for model in input_models:
                 variable_recipies = getattr(model, var_type)
                 if len(variable_recipies) > 0:
                     vars = [recip.get_variables() for recip in variable_recipies]
                     variables.append(vars)
-        variables: Sequence[Variable] = flatten_recursive([variables, self.models])
+        variables: Sequence[Variable] = flatten_recursive([variables, input_models, exogen_models])
 
         if set([var.subset for var in variables]) != {0, 1}:
             raise ValueError(
@@ -121,12 +124,13 @@ class ModelController:
 
         # There cannot be cycles before the forecast or during the forecast (each must be a DAG)
         for subset in [0, 1]:
-            edges = flatten_recursive(
-                [var.edges for var in variables if var.subset == subset]
+            test_edges = flatten_recursive(
+                [var.edges for var in variables if var.subset == subset and not isinstance(var, ExogenModel)]
             )
-            test_for_cyclic_graph(self._graph, edges)
+            test_for_cyclic_graph(self._graph, test_edges)
 
-        self._graph.add_edges_from(flatten_recursive([var.edges for var in variables]))
+        edges = flatten_recursive([var.edges for var in variables if not isinstance(var, ExogenModel)])
+        self._graph.add_edges_from(edges)
 
         nodes = [var.node for var in variables]
         self._graph.add_nodes_from(nodes)
@@ -359,24 +363,30 @@ class EndogenousSystem:
 
     def fit_models(self):
         for model in self.models.models:
-            if isinstance(model.model, str):
-                pass
-            if isinstance(model.model, BaseEstimator):
-                df = self._past.to_dataframe()
-                y, X = df[model.output_var], df[model.input_vars]
-                model.model.fit(X, y)
-            if isinstance(model.model, MLForecast):
-                data_variables = list(
-                    itertools.chain([model.output_var], model.input_vars)
-                )
-                df = self._past.to_dataframe()[data_variables]
-                df = df.rename(columns={model.output_var: "y"})
-                df.reset_index(inplace=True)
-                model.model.fit(
-                    df,
-                    static_features=[],
-                    prediction_intervals=PredictionIntervals(n_windows=4, h=1),
-                )
+            if isinstance(model, ExogenModel):
+                # Fitting the model is equvivalent to writing the data into all simulations
+                df = read_input_data(model.exogen_data)
+                df = df.rename(columns=self.pnames.to_dict()).set_index(self.pnames.internal_index)[model.output_var].to_xarray()
+                self._xa[model.output_var][np.searchsorted(self._xa.ds.values, df.ds.values)] = df
+            else:
+                if isinstance(model.model, str):
+                    pass
+                if isinstance(model.model, BaseEstimator):
+                    df = self._past.to_dataframe()
+                    y, X = df[model.output_var], df[model.input_vars]
+                    model.model.fit(X, y)
+                if isinstance(model.model, MLForecast):
+                    data_variables = list(
+                        itertools.chain([model.output_var], model.input_vars)
+                    )
+                    df = self._past.to_dataframe()[data_variables]
+                    df = df.rename(columns={model.output_var: "y"})
+                    df.reset_index(inplace=True)
+                    model.model.fit(
+                        df,
+                        static_features=[],
+                        prediction_intervals=PredictionIntervals(n_windows=4, h=1),
+                    )
 
     def simulate(self):
         levels = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95]
@@ -386,6 +396,8 @@ class EndogenousSystem:
             for schedules in [t0, t1]:
                 for node_schedule in schedules.schedule:
                     for node in node_schedule:
+                        if any([isinstance(m, ExogenModel) for m in self.models.models if m.output_var == node]):
+                            continue # If model is Exogen, data is already in simulation from fitting.
                         model = self.models._graph.nodes[node]["model"]
 
                         input_vars = [
