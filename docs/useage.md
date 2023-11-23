@@ -109,8 +109,9 @@ vars: [grwth, gdppc, population, psecprop, intensity_level, v2x_libdem]
 
 Here, the path (relative to the current working directory or absolute) to the input_data, the names of panel data dimensions, number of simulations, when to end simulations, how much past data to include when fitting models, and the variables to include from the input_data can be set up.
 
-### Variables (InputModel)
+### Variables
 
+#### InputModel
 ```{code} yaml
 _target_: endogen.config.InputModel
 stage: writing
@@ -158,3 +159,14 @@ In the above example, "grwth" rely on two other InputModels: "intensity_level" a
 In the transformation step, the lags and rolling variables, as well as any transforms where `after_forecast` is False, are calculated. The transformations must be possible to describe as directed acyclic graphs (DAGs). In the above example, "intensity_level" is used to calculate the rolling mean 8-year half-life, "intensity_level_hlm8". Note that the output variable name is implicitly given by the fixed naming scheme. "intensity_level_hlm8" then becomes input to calculating the 1-year lagged variable "intensity_level_hlm8_l1".
 
 The model used in this example is a [mlforecast](https://github.com/Nixtla/mlforecast) model defined as an equally weighted ensemble of two [scikit-learn](https://scikit-learn.org/stable/index.html) models, a linear (OLS) model and a random forest, both with default specifications. As we are using an integer based time-variable, `freq` must be 1 (each step increase the year with 1). ENDOGEN will fit these models with conformal prediction, asking for ten different prediction intervals, building a 0.05-percentile stepwise histogram across the complete predictive distribution. When making forecasts, the model will then draw randomly from this distribution for each prediction (at each time-step, for each unit, for each independent simulation run).
+
+It is also possible to define mathematical functions directly as your model. This is done through a Wilkinson's formula string that is parsed internally through a `formulae.design_matrices`. See the documentation for how to build such strings on [bambinos.github.io](https://bambinos.github.io/formulae/notebooks/getting_started.html). An important restriction to have in mind is that the string must return only a single variable. E.g., to sum two variables, use "I(var1+var2)" instead of "var1 + var2". In addition to the inbuilt functions, ENDOGEN support any numpy function, e.g., "np.add(var1, var2)", as well as scipy functions (e.g., statistical distributions) using "scipy." to access the namespace.
+
+#### ExogenModel
+```{code} yaml
+_target_: endogen.config.ExogenModel
+output_var: population
+exogen_data: data/pop_test_exog.csv
+```
+
+ENDOGEN supports including exogenous variables directly. {func}`endogen.config.ExogenModel` takes `exogen_data`, which is a .csv or .parquet file with the same `time_var` and `unit_var` columns as the `input_data` you have defined in the {func}`endogen.config.EndogenousSystem`, as well as a column with the `output_var`. The data must be complete for all units in the simulation system, for all forecast time-periods from `start` until (not including) `end`. When an {func}`endogen.config.ExogenModel` is defined, it can be accessed in other {func}`endogen.config.InputModel` as normal. E.g., if you need the 1-lag of the `output_var` "population", you must specify the lag-transformation in the {func}`endogen.config.InputModel`.
