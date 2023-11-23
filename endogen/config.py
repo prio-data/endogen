@@ -275,6 +275,22 @@ class InputModel:
         """
         return [(input_var, self.output_var) for input_var in self.input_vars]
 
+@dataclass(eq=True, frozen=True)
+class ExogenModel:
+    output_var: str
+    exogen_data: str
+    subset: int = field(default=1)
+
+    @property
+    def node(self) -> Tuple[str, Mapping[str, Any]]:
+        """A node representation that interface well with NetworkX graphs.
+
+        Returns
+        -------
+        Tuple[str, Mapping[str, Any]]
+            A tuple where the first element is the output variable name ("node"), and the second element is a dictionary of node data.
+        """
+        return (self.output_var, {"subset": self.subset})
 
 @dataclass
 class GlobalSimConfig:
@@ -327,4 +343,4 @@ class Config:
 
     _variable_dict: dict
     global_config: GlobalSimConfig
-    variables: List[InputModel] = field(default_factory=list)
+    variables: List[InputModel|ExogenModel] = field(default_factory=list)
