@@ -277,6 +277,20 @@ class InputModel:
 
 @dataclass(eq=True, frozen=True)
 class ExogenModel:
+    """Configuration schema for statistical model of any variable, to be used in endogenous simulation.
+    Can be used separately, or in conjunction with .yaml files and `hydra.initialize`, `hydra.compose`, and `hydra.utils.instantiate`.
+
+    An ExogenModel variable is forecast data coming from somewhere else. Currenly only supports deterministic exogenous variables. It has to be a complete
+    set of data for all units in the simulation system, from the start date of simulation to the end date.
+
+    output_var : str
+        The name of the output variable in question.
+    exogen_data : str
+        String path to .csv or .parquet file only including time_var, unit_var and output_var.
+    subset : int
+        This should just always be 1. Might remove this as an option.
+
+    """
     output_var: str
     exogen_data: str
     subset: int = field(default=1)
