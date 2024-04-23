@@ -341,13 +341,13 @@ class EndogenousSystem:
         for node_schedule in t0.schedule:
             for node in node_schedule:
                 if isinstance(node, str) and node in self.models.prepare_nodes:
-                    self._past = xarray.merge(
-                        [
-                            self._past,
-                            self.models._graph.nodes[node]["model"].calc(xd=self._past),
-                        ]
-                    )
-
+                    if "model" in self.models._graph.nodes[node]:
+                        self._past = xarray.merge(
+                            [
+                                self._past,
+                                self.models._graph.nodes[node]["model"].calc(xd=self._past),
+                            ]
+                        )
         # for node_schedule in t1.schedule:
         #     for node in node_schedule:
         #         if isinstance(node, str) and node in self.models.prepare_nodes:
@@ -367,6 +367,7 @@ class EndogenousSystem:
                 # Fitting the model is equvivalent to writing the data into all simulations
                 df = read_input_data(model.exogen_data)
                 df = df.rename(columns=self.pnames.to_dict()).set_index(self.pnames.internal_index)[model.output_var].to_xarray()
+                df = df.sel(ds=self._xa.ds.values)
                 self._xa[model.output_var][np.searchsorted(self._xa.ds.values, df.ds.values)] = df
             else:
                 if isinstance(model.model, str):
