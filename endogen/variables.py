@@ -150,13 +150,21 @@ class VariableTransform(Variable):
         xarray.DataArray
             Returns a DataArray with the output_var, properly indexed.
         """
-        df: pd.DataFrame = xd[self.input_vars].to_dataframe()
-        ind: pd.Index = df.index
-        res = design_matrices(
-            f"0 + {self.formula}", df, na_action="pass"
-        ).common.as_dataframe()
-        varname = res.columns[0]
-        return res.rename(columns={varname: self.output_var}).set_index(ind).to_xarray()
+        all_res = []
+        for sim in xd.sim.values:
+            df: pd.DataFrame = xd[self.input_vars].sel(sim = sim).to_dataframe()
+            ind: pd.Index = df.index
+            res = design_matrices(
+                f"0 + {self.formula}", df, na_action="pass"
+            ).common.as_dataframe()
+            varname = res.columns[0]
+            res["sim"] = sim
+            res = res.rename(columns={varname: self.output_var}).set_index([ind, "sim"])
+            all_res.append(res)
+        final_res = pd.concat(all_res)
+        return final_res.to_xarray()
+
+
 
 
 @dataclass(eq=True, frozen=True)
